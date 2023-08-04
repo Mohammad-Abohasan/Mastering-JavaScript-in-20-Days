@@ -34,4 +34,4 @@ In this challenge, you will enhance your JavaScript skills and knowledge. Each d
 - Celebrate your achievements and reflect on your growth throughout the challenge.
 
 ## Folder Structure
--  [**Day 1**]()
+-  [**Day 1**](https://github.com/Mohammad-Abohasan/Mastering-JavaScript-in-20-Days/blob/master/Day1.md)
