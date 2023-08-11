@@ -28,7 +28,7 @@ if(js.isAwseome) {
 ----
 
 #### 📍 Why do we need JavaScript?
-> _"HTML & CSS & JS: BFFs (Best Friend Forever)!"_
+> _"HTML & CSS & JS: BFFs (Best Friends Forever)!"_
 
 **HTML** is the **noun** - the subject that the sentence is all about, **CSS** is the **adjective**, dressing up that noun to make it more attractive, and **JavaScript** is the **verb** - the interactions and animations on the website.
 
@@ -42,6 +42,40 @@ if(js.isAwseome) {
 ----
 
 ## DOM ⚡
+The **Document Object Model** connects web pages to scripts or programming languages by representing the structure of a document—such as the HTML representing a web page—in memory.
+The DOM represents a document with a logical tree. Each branch of the tree ends in a node, and each node contains objects. DOM methods allow programmatic access to the tree. With them, you can change the document's structure, style, or content.
+
+```javascript
+document // return html document
+```
+
+```javascript
+document.title // return title of the document
+```
+
+```javascript
+document.body // return body
+```
+
+```javascript
+document.body.children // return all of the child elements of the body
+```
+
+```javascript
+document.getElementById("board") // return first element with an id="board"
+document.querySelector("#board") // return first element with an id="board"
+```
+
+```javascript
+document.getElementsByTagName("h1") // return all the h1 elements
+document.querySelectorAll("h1") // return all the h1 elements
+```
+
+```javascript
+document.getElementsByClassName("player") // return all the elements with class="player"
+document.querySelectorAll(".player") // return all the elements with class="player"
+```
+
 ## Values & Data Types ⚡
 ## Operators ⚡
 ## Expressions ⚡
