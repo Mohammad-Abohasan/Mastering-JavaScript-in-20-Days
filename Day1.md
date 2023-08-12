@@ -168,8 +168,36 @@ document.getElementsByTagName("h2")[0].append(" and love")
 
 ---
 
-
 ## Values & Data Types ⚡
+- Double quotation → (") 
+- Single quotation → (')
+- Backtick → (`)
+
+"42" vs. 42 are these the same thing? 
+**No**, they are not the same thing
+```javascript
+typeof
+// operator tells you the type of a value
+
+typeof "42"
+// return string
+
+typeof 42
+//return number
+```
+
+JS has two kinds of data:
+- Primitive types (e.g. strings, numbers)
+- Objects (e.g. document & friends)
+  - string
+  - number
+  - boolean
+  - undefined
+  - null
+  - A couple others we don't need yet
+
+
+
 ## Operators ⚡
 ## Expressions ⚡
 ## Arrays ⚡
