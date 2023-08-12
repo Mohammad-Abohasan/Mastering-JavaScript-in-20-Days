@@ -46,35 +46,128 @@ The **Document Object Model** connects web pages to scripts or programming langu
 The DOM represents a document with a logical tree. Each branch of the tree ends in a node, and each node contains objects. DOM methods allow programmatic access to the tree. With them, you can change the document's structure, style, or content.
 
 ```javascript
-document // return html document
+document
+// return html document
 ```
 
 ```javascript
-document.title // return title of the document
+document.title
+// return title of the document
 ```
 
 ```javascript
-document.body // return body
+document.body
+// return body
 ```
 
 ```javascript
-document.body.children // return all of the child elements of the body
+document.body.children
+// return all of the child elements of the body
 ```
 
 ```javascript
-document.getElementById("board") // return first element with an id="board"
-document.querySelector("#board") // return first element with an id="board"
+document.getElementById("board")
+document.querySelector("#board")
+// return first element with an id="board"
 ```
 
 ```javascript
-document.getElementsByTagName("h1") // return all the h1 elements
-document.querySelectorAll("h1") // return all the h1 elements
+document.getElementsByTagName("h1")
+document.querySelectorAll("h1")
+// return all the h1 elements
 ```
 
 ```javascript
-document.getElementsByClassName("player") // return all the elements with class="player"
-document.querySelectorAll(".player") // return all the elements with class="player"
+document.getElementsByClassName("player")
+document.querySelectorAll(".player")
+// return all the elements with class="player"
 ```
+
+```javascript
+document.getElementsByClassName("player").length
+document.querySelectorAll(".player").length
+// return the number of elements with class="player"
+```
+
+```javascript
+document.getElementById("p1-name").textContent
+// return text inside the element with an id="p1-name"
+```
+
+---
+
+### 📋 Exercise
+| Type commands in the console to retrieve |
+| ------------- |
+| 1. all the **p** elements |
+| 2. the text "**X**" |
+| 3. the **number of squares in the board** |
+| 4. the text "**A game you know**" |
+
+1.
+```javascript
+document.getElementsByTagName("p")
+document.querySelectorAll("p")
+```
+2.
+```javascript
+document.getElementById("p1-symbol").textContent
+document.querySelector("#p1-symbol").textContent
+```
+3.
+```javascript
+document.getElementsByClassName("square").length
+document.querySelectorAll(".square").length
+```
+4.
+```javascript
+document.getElementsByTagName("h2")[0].textContent
+document.querySelector("h2").textContent
+```
+
+---
+
+```javascript
+document.title = "My page"
+// replace title
+```
+
+```javascript
+document.getElementById("p1-name").textContent = "Mohammad"
+// replace the text of the #p1-name element
+```
+
+```javascript
+document.getElementById("p1-name").append(" & Abohasan")
+// add to the end of the element's current text
+```
+
+---
+
+### 📋 Exercise
+| Type commands in the console to |
+| ------------- |
+| 1. **Change** the player names to **you & neighbor** |
+| 2. **Swap** the **player symbols** |
+| 3. **Change** subtitle to "A game you know **and love**" |
+
+1.
+```javascript
+document.getElementById("p1-name").textContent = "Mohammad"
+document.getElementById("p2-name").textContent = "Aya"
+```
+2.
+```javascript
+document.getElementById("p1-symbol").textContent = "O"
+document.getElementById("p2-symbol").textContent = "X"
+```
+3.
+```javascript
+document.getElementsByTagName("h2")[0].append(" and love")
+```
+
+---
+
 
 ## Values & Data Types ⚡
 ## Operators ⚡
