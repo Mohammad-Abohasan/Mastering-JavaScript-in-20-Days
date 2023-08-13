@@ -261,6 +261,42 @@ Concatenate strings together
 // "mohammad"
 ```
 
+### 📋 Exercise
+| Use our new string superpowers to |
+| ------------- |
+| 1. Add your last name in the players listing |
+| 2. Retrieve the first "T" in the page title |
+| 3. Answer whether the page title contians the string "JavaScript" |
+| 4. Capitalize the heading "Tic Tac Toe |
+
+1.
+```javascript
+document.getElementById("p1-name").append(" Abohasan")
+document.getElementById("p2-name").append(" Abohasan")
+
+```
+
+2.
+```javascript
+// document.title ==> 'JavaScripTacToe'
+document.title[document.title.indexOf("T")]
+// document.title.indexOf("T") ==> 9
+```
+
+3.
+```javascript
+document.title.includes("JavaScript")
+```
+
+4.
+```javascript
+document.querySelector("h1").textContent = document.querySelector("h1").textContent.toUpperCase()
+
+document.querySelector("header h1").style.textTransform = "uppercase"
+```
+
+> Remember ✨ MDN ✨ is your friend!
+
 ## Operators ⚡
 ## Expressions ⚡
 ## Arrays ⚡
