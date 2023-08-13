@@ -188,15 +188,78 @@ typeof 42
 
 JS has two kinds of data:
 - Primitive types (e.g. strings, numbers)
-- Objects (e.g. document & friends)
   - string
   - number
   - boolean
   - undefined
   - null
-  - A couple others we don't need yet
+  - symbol
+  - bigint
+- Objects (e.g. document & friends)
 
+| Value | Type |
+| ----- | ---- |
+| false | boolean |
+| "true" | string |
+| document.title | string |
+| "Mohammad".length | number |
+| undefined | undefined |
+| null | null (object) |
 
+```javascript
+"aya"[0]
+// 'a'
+```
+
+```javascript
+"aya".indexOf("y")
+// 1
+```
+
+```javascript
+"aya".indexOf("a")
+// 0
+```
+
+```javascript
+"aya".lastIndexOf("a")
+// 2
+```
+
+```javascript
+"aya".lastIndexOf("r")
+// -1
+```
+
+```javascript
+"aya".includes("ya")
+// true
+```
+
+```javascript
+"aya".startsWith("ay")
+// true
+```
+
+At what **index** does this **substring begin**?
+```javascript
+"mohammad".indexOf("hamm")
+// 2
+
+"mohammad".indexOf("hamz")
+// -1
+```
+
+Concatenate strings together
+```javascript
+"Mohammad" + " Abohasan"
+// "Mohammad Abohasan"
+```
+
+```javascript
+"MoHaMMaD".toLowerCase()
+// "mohammad"
+```
 
 ## Operators ⚡
 ## Expressions ⚡
