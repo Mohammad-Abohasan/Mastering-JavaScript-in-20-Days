@@ -173,7 +173,7 @@ document.getElementsByTagName("h2")[0].append(" and love")
 - Single quotation → (')
 - Backtick → (`)
 
-"42" vs. 42 are these the same thing? 
+📍 "42" vs. 42 are these the same thing? 
 **No**, they are not the same thing
 ```javascript
 typeof
@@ -188,23 +188,23 @@ typeof 42
 
 JS has two kinds of data:
 - Primitive types (e.g. strings, numbers)
-  - string
-  - number
-  - boolean
-  - undefined
-  - null
-  - symbol
-  - bigint
+  - `string`
+  - `number`
+  - `boolean`
+  - `undefined`
+  - `null`
+  - `symbol`
+  - `bigint`
 - Objects (e.g. document & friends)
 
 | Value | Type |
 | ----- | ---- |
-| false | boolean |
-| "true" | string |
-| document.title | string |
-| "Mohammad".length | number |
-| undefined | undefined |
-| null | null (object) |
+| `false` | `boolean` |
+| `"true"` | `string` |
+| `document.title` | `string` |
+| `"Mohammad".length` | `number` |
+| `undefined` | `undefined` |
+| `null` | null (`object`) |
 
 ```javascript
 "aya"[0]
@@ -241,7 +241,7 @@ JS has two kinds of data:
 // true
 ```
 
-At what **index** does this **substring begin**?
+📍 At what **index** does this **substring begin**?
 ```javascript
 "mohammad".indexOf("hamm")
 // 2
@@ -273,7 +273,6 @@ Concatenate strings together
 ```javascript
 document.getElementById("p1-name").append(" Abohasan")
 document.getElementById("p2-name").append(" Abohasan")
-
 ```
 
 2.
@@ -297,7 +296,37 @@ document.querySelector("header h1").style.textTransform = "uppercase"
 
 > Remember ✨ MDN ✨ is your friend!
 
+---
+
 ## Operators ⚡
+
+| Example | Operator |
+| ----- | ---- |
+| "Aya" + "!" | `+` |
+| typeof "aya" | `typeof` |
+
+[MDN-**Operators**](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators)
+
+| Strict | Result | Loosey-goosey | Result |
+| ----- | ---- | ----- | ---- |
+| `1 === 1` | `true` | `1 == 1` | `true` |
+| `"1" === "1"` | `true` | `"1" == "1"` | `true` |
+| `1 === "1"` | `false` | `1 == "1"` | `true` |
+
+> You should almost always use the **strict** version
+
+[MDN-**Nullish coalescing operator (??)**](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Nullish_coalescing)
+
+```javascript
+null ?? "aya"
+// "aya"
+
+"mohammad" ?? "aya"
+// "mohammad"
+```
+
+---
+
 ## Expressions ⚡
 ## Arrays ⚡
 ## Objects ⚡
