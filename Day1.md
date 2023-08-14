@@ -46,51 +46,51 @@ The **Document Object Model** connects web pages to scripts or programming langu
 The DOM represents a document with a logical tree. Each branch of the tree ends in a node, and each node contains objects. DOM methods allow programmatic access to the tree. With them, you can change the document's structure, style, or content.
 
 ```javascript
-document
+document;
 // return html document
 ```
 
 ```javascript
-document.title
+document.title;
 // return title of the document
 ```
 
 ```javascript
-document.body
+document.body;
 // return body
 ```
 
 ```javascript
-document.body.children
+document.body.children;
 // return all of the child elements of the body
 ```
 
 ```javascript
-document.getElementById("board")
-document.querySelector("#board")
+document.getElementById("board");
+document.querySelector("#board");
 // return first element with an id="board"
 ```
 
 ```javascript
-document.getElementsByTagName("h1")
-document.querySelectorAll("h1")
+document.getElementsByTagName("h1");
+document.querySelectorAll("h1");
 // return all the h1 elements
 ```
 
 ```javascript
-document.getElementsByClassName("player")
-document.querySelectorAll(".player")
+document.getElementsByClassName("player");
+document.querySelectorAll(".player");
 // return all the elements with class="player"
 ```
 
 ```javascript
-document.getElementsByClassName("player").length
-document.querySelectorAll(".player").length
+document.getElementsByClassName("player").length;
+document.querySelectorAll(".player").length;
 // return the number of elements with class="player"
 ```
 
 ```javascript
-document.getElementById("p1-name").textContent
+document.getElementById("p1-name").textContent;
 // return text inside the element with an id="p1-name"
 ```
 
@@ -106,39 +106,39 @@ document.getElementById("p1-name").textContent
 
 1.
 ```javascript
-document.getElementsByTagName("p")
-document.querySelectorAll("p")
+document.getElementsByTagName("p");
+document.querySelectorAll("p");
 ```
 2.
 ```javascript
-document.getElementById("p1-symbol").textContent
-document.querySelector("#p1-symbol").textContent
+document.getElementById("p1-symbol").textContent;
+document.querySelector("#p1-symbol").textContent;
 ```
 3.
 ```javascript
-document.getElementsByClassName("square").length
-document.querySelectorAll(".square").length
+document.getElementsByClassName("square").length;
+document.querySelectorAll(".square").length;
 ```
 4.
 ```javascript
-document.getElementsByTagName("h2")[0].textContent
-document.querySelector("h2").textContent
+document.getElementsByTagName("h2")[0].textContent;
+document.querySelector("h2").textContent;
 ```
 
 ---
 
 ```javascript
-document.title = "My page"
+document.title = "My page";
 // replace title
 ```
 
 ```javascript
-document.getElementById("p1-name").textContent = "Mohammad"
+document.getElementById("p1-name").textContent = "Mohammad";
 // replace the text of the #p1-name element
 ```
 
 ```javascript
-document.getElementById("p1-name").append(" & Abohasan")
+document.getElementById("p1-name").append(" & Abohasan");
 // add to the end of the element's current text
 ```
 
@@ -153,17 +153,17 @@ document.getElementById("p1-name").append(" & Abohasan")
 
 1.
 ```javascript
-document.getElementById("p1-name").textContent = "Mohammad"
-document.getElementById("p2-name").textContent = "Aya"
+document.getElementById("p1-name").textContent = "Mohammad";
+document.getElementById("p2-name").textContent = "Aya";
 ```
 2.
 ```javascript
-document.getElementById("p1-symbol").textContent = "O"
-document.getElementById("p2-symbol").textContent = "X"
+document.getElementById("p1-symbol").textContent = "O";
+document.getElementById("p2-symbol").textContent = "X";
 ```
 3.
 ```javascript
-document.getElementsByTagName("h2")[0].append(" and love")
+document.getElementsByTagName("h2")[0].append(" and love");
 ```
 
 ---
@@ -175,14 +175,14 @@ document.getElementsByTagName("h2")[0].append(" and love")
 
 📍 "42" vs. 42 are these the same thing? 
 **No**, they are not the same thing
-```javascript
-typeof
-// operator tells you the type of a value
 
-typeof "42"
+`typeof`: operator tells you the type of a value
+
+```javascript
+typeof "42";
 // return string
 
-typeof 42
+typeof 42;
 //return number
 ```
 
@@ -207,57 +207,57 @@ JS has two kinds of data:
 | `null` | null (`object`) |
 
 ```javascript
-"aya"[0]
+"aya"[0];
 // 'a'
 ```
 
 ```javascript
-"aya".indexOf("y")
+"aya".indexOf("y");
 // 1
 ```
 
 ```javascript
-"aya".indexOf("a")
+"aya".indexOf("a");
 // 0
 ```
 
 ```javascript
-"aya".lastIndexOf("a")
+"aya".lastIndexOf("a");
 // 2
 ```
 
 ```javascript
-"aya".lastIndexOf("r")
+"aya".lastIndexOf("r");
 // -1
 ```
 
 ```javascript
-"aya".includes("ya")
+"aya".includes("ya");
 // true
 ```
 
 ```javascript
-"aya".startsWith("ay")
+"aya".startsWith("ay");
 // true
 ```
 
 📍 At what **index** does this **substring begin**?
 ```javascript
-"mohammad".indexOf("hamm")
+"mohammad".indexOf("hamm");
 // 2
 
-"mohammad".indexOf("hamz")
+"mohammad".indexOf("hamz");
 // -1
 ```
 
 Concatenate strings together
 ```javascript
-"Mohammad" + " Abohasan"
+"Mohammad" + " Abohasan";
 // "Mohammad Abohasan"
 ```
 
 ```javascript
-"MoHaMMaD".toLowerCase()
+"MoHaMMaD".toLowerCase();
 // "mohammad"
 ```
 
@@ -271,27 +271,27 @@ Concatenate strings together
 
 1.
 ```javascript
-document.getElementById("p1-name").append(" Abohasan")
-document.getElementById("p2-name").append(" Abohasan")
+document.getElementById("p1-name").append(" Abohasan");
+document.getElementById("p2-name").append(" Abohasan");
 ```
 
 2.
 ```javascript
 // document.title ==> 'JavaScripTacToe'
-document.title[document.title.indexOf("T")]
+document.title[document.title.indexOf("T")];
 // document.title.indexOf("T") ==> 9
 ```
 
 3.
 ```javascript
-document.title.includes("JavaScript")
+document.title.includes("JavaScript");
 ```
 
 4.
 ```javascript
-document.querySelector("h1").textContent = document.querySelector("h1").textContent.toUpperCase()
+document.querySelector("h1").textContent = document.querySelector("h1").textContent.toUpperCase();
 
-document.querySelector("header h1").style.textTransform = "uppercase"
+document.querySelector("header h1").style.textTransform = "uppercase";
 ```
 
 > Remember ✨ MDN ✨ is your friend!
@@ -300,7 +300,7 @@ document.querySelector("header h1").style.textTransform = "uppercase"
 
 ## Operators ⚡
 
-| Example | Operator |
+| Snippet | Operator |
 | ----- | ---- |
 | "Aya" + "!" | `+` |
 | typeof "aya" | `typeof` |
@@ -318,16 +318,57 @@ document.querySelector("header h1").style.textTransform = "uppercase"
 [MDN-**Nullish coalescing operator (??)**](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Nullish_coalescing)
 
 ```javascript
-null ?? "aya"
+null ?? "aya";
 // "aya"
 
-"mohammad" ?? "aya"
+"mohammad" ?? "aya";
 // "mohammad"
 ```
 
 ---
 
 ## Expressions ⚡
+🎈 Examples:
+- `4 / 2 * 10`
+- `"Mohammad" + "Abohasan"`
+- `5 > 4 !== 3 > 4` 
+
+```javascript
+"Mohammad Abohasan".includes("Abo" + "hasan");
+// true
+```
+
+[MDN-**Expressions**](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators)
+
+### Variables
+
+This is one way we can create a variable
+```javascript
+let remember = "14 Aug. 23";
+```
+`let`: is a special keyword that lets us declare a variable.
+
+![Ideclarebankruptcy](https://media.tenor.com/HQspuvhxSbIAAAAC/the-office-steve-carell.gif)
+```javascript
+let bankruptcy;
+// bankruptcy = undefined
+```
+![nullVsUndefined](https://github.com/Mohammad-Abohasan/Mastering-JavaScript-in-20-Days/assets/74917940/78aa062c-14a3-4453-808e-2a6b40144357)
+
+
+```javascript
+// Declaring
+let myDeclaredVariable;
+// Assigning
+myDeclaredVariable = "so value, much wow";
+
+// Declaring & assigning at once
+letAssignedVariable = "such efficient, amaze";
+```
+
+
+---
+
 ## Arrays ⚡
 ## Objects ⚡
 ## Tic-Tac-Toe ⚡
