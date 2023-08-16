@@ -39,7 +39,23 @@ if(js.isAwseome) {
 - Local text file in editor, e.g. **TextEdit**, [**VS Code**](https://code.visualstudio.com/).
 - Online playground e.g. [**CodePen**](https://codepen.io/), [**CodeSendbox**](https://codesandbox.io/).
 
-----
+---
+
+## Coding Challenges
+
+[First-Challenge](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-javascript/compound-assignment-with-augmented-multiplication)
+#### Solution 🥳
+```javascript
+let a = 5;
+let b = 12;
+let c = 4.6;
+
+a *= 5;
+b *= 3;
+c *= 10;
+```
+
+---
 
 ## DOM ⚡
 The **Document Object Model** connects web pages to scripts or programming languages by representing the structure of a document—such as the HTML representing a web page—in memory.
@@ -164,6 +180,29 @@ document.getElementById("p2-symbol").textContent = "X";
 3.
 ```javascript
 document.getElementsByTagName("h2")[0].append(" and love");
+```
+
+---
+
+## Coding Challenges
+
+[First-Challenge](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-javascript/concatenating-strings-with-the-plus-equals-operator)
+#### Solution 🥳
+```javascript
+let myStr = "This is the first sentence.";
+myStr += " This is the second sentence.";
+```
+
+[Second-Challenge](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/object-oriented-programming/use-dot-notation-to-access-the-properties-of-an-object)
+#### Solution 🥳
+```javascript
+let dog = {
+  name: "Spot",
+  numLegs: 4
+};
+
+console.log(dog.name);
+console.log(dog.numLegs);
 ```
 
 ---
