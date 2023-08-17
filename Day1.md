@@ -402,13 +402,68 @@ let myDeclaredVariable;
 myDeclaredVariable = "so value, much wow";
 
 // Declaring & assigning at once
-letAssignedVariable = "such efficient, amaze";
+let AssignedVariable = "such efficient, amaze";
+
+// Declaring & assigning forever
+let myUnchangeableVariable = "Never gonna give you up";
 ```
 
+![ConstLetVar](https://github.com/Mohammad-Abohasan/Mastering-JavaScript-in-20-Days/assets/74917940/37913f8f-65e5-498c-af2a-0717527142c7)
+
+### 📋 Exercise
+| Use our new string superpowers to |
+| ------------- |
+| 1. Your name |
+| 2. The combined age of your parents |
+| 3. The #board element on the page |
+
+1.
+```javascript
+const myName = "Mohammad Abohasan";
+```
+
+2.
+```javascript
+let combinedMyParentsAge = 48 + 45;
+```
+
+3.
+```javascript
+let boardEl = document.getElementById("board");
+```
+
+### Variables ~~contain~~ point to values
+
+📍 What happens when this code runs?
+```javascript
+let answerToLife = ((4 + 1) * 2 * 4) + 2;
+let scrub = "guy that thinks he's fly";
+let busta = scrub;
+scrub = "guy that can't get no love from me";
+```
+![EvalCode](https://github.com/Mohammad-Abohasan/Mastering-JavaScript-in-20-Days/assets/74917940/62b72ca4-7450-4a56-8ff2-db607f55e1e6)
+
+### Statements vs. Expressions
+An expression "**asks**" JavaScript for a value
+```javascript
+myAssignedVariable
+6 + 4
+document.getElementById("board")
+```
+
+A statement "**tells**" JavaScript to do something (e.g. declare/assign a variable)
+```javascript
+let ten = 6 + 4;
+myDeclaredVariable = "new value";
+let board = document.getElementById("board");
+```
 
 ---
 
 ## Arrays ⚡
+
+
+
 ## Objects ⚡
 ## Tic-Tac-Toe ⚡
 ## Quiz Project ⚡
