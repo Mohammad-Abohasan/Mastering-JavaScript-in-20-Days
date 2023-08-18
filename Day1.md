@@ -41,22 +41,6 @@ if(js.isAwseome) {
 
 ---
 
-## Coding Challenges
-
-[First-Challenge](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-javascript/compound-assignment-with-augmented-multiplication)
-#### Solution 🥳
-```javascript
-let a = 5;
-let b = 12;
-let c = 4.6;
-
-a *= 5;
-b *= 3;
-c *= 10;
-```
-
----
-
 ## DOM ⚡
 The **Document Object Model** connects web pages to scripts or programming languages by representing the structure of a document—such as the HTML representing a web page—in memory.
 The DOM represents a document with a logical tree. Each branch of the tree ends in a node, and each node contains objects. DOM methods allow programmatic access to the tree. With them, you can change the document's structure, style, or content.
@@ -180,29 +164,6 @@ document.getElementById("p2-symbol").textContent = "X";
 3.
 ```javascript
 document.getElementsByTagName("h2")[0].append(" and love");
-```
-
----
-
-## Coding Challenges
-
-[First-Challenge](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-javascript/concatenating-strings-with-the-plus-equals-operator)
-#### Solution 🥳
-```javascript
-let myStr = "This is the first sentence.";
-myStr += " This is the second sentence.";
-```
-
-[Second-Challenge](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/object-oriented-programming/use-dot-notation-to-access-the-properties-of-an-object)
-#### Solution 🥳
-```javascript
-let dog = {
-  name: "Spot",
-  numLegs: 4
-};
-
-console.log(dog.name);
-console.log(dog.numLegs);
 ```
 
 ---
@@ -776,4 +737,301 @@ spiceGirls.members[4].name;
 ---
 
 ## Tic-Tac-Toe ⚡
+
+```javascript
+const players = [
+  {
+    name: "Mohammad",
+    symbol: "O"
+  }, {
+    name: "Aya",
+    symbol: "X"
+  }
+];
+
+document.getElementById("p1-name").textContent = players[0].name;
+document.getElementById("p1-symbol").textContent = players[0].symbol;
+
+document.getElementById("p2-name").textContent = players[1].name;
+document.getElementById("p2-symbol").textContent = players[1].symbol;
+
+const board = document.querySelectorAll(".square");
+board[0].textContent = players[1].symbol;
+// ..
+// ..
+// ..
+```
+![MohammadWins](https://github.com/Mohammad-Abohasan/Mastering-JavaScript-in-20-Days/assets/74917940/5fd6bd0d-d14b-4286-bbcf-09a4919c8444)
+
+---
+
 ## Quiz Project ⚡
+
+### 🔒 [Quiz-1](https://anjana.dev/javascript-first-steps/2-jsquiz-fancy.html)
+
+![Quiz-1-result](https://github.com/Mohammad-Abohasan/Mastering-JavaScript-in-20-Days/assets/74917940/4976b8b6-6f6d-44ef-a255-16f54d109324)
+
+### 🔒 [Quiz-2](https://anjana.dev/javascript-first-steps/2-jsquiz-starter.html)
+```javascript
+// TODO 1: Declare & assign variables pointing to the corresponding element(s)
+// statement should be the "statement" div
+// optionButtons should be all the elements within the "options" div
+// explanation should be the "explanation" div
+const statement = document.getElementById("statement");
+const optionButtons = document.getElementById("options").children;
+const explanation = document.getElementById("explanation");
+
+// TODO 2: Declare & assign a variable called fact
+// Its value should be an object with a statement, true/false answer, and explanation
+let fact = {
+    statement: "Arrays in JS are editable values",
+    answer: true,
+    explanation: "In JavaScript arrays are mutable values, meaning they can be edited"
+};
+
+// TODO 3: Set the text of the statement element to the fact's statement
+statement.textContent = fact.statement;
+```
+
+---
+---
+
+```javascript
+// TODO 4: Declare disable & enable functions to set or remove the "disabled" attribute from a given button element
+// disable(button) should set the button element's attribute "disabled" to the value ""
+// enable(button) should remove the attribute "disabled" from the button element
+const enable = function (btnEl) {
+  btnEl.disabled = false;
+}
+const disable = function (btnEl) {
+  btnEl.disabled = true;
+}
+
+// TODO 5: Declare an isCorrect function that compares a guess to the right answer
+// isCorrect(guess) should return true if the guess matches the fact's answer
+const isCorrect = function (guess) {
+  return guess == fact.answer;
+}
+
+// TODO 6A: Use a for loop to add a click event listener to each of the optionButtons
+// TODO 6B: Within the event handler function, display the fact's explanation by setting the text of the explanation element
+
+
+// TODO 7: Within the event handler function, 
+// Use a for loop to disable all the option buttons
+
+
+// TODO 8: Within the event handler function,
+// Get the guessed value from the clicked button
+// Use a conditional to compare the guess to the fact's answer
+// and add the "correct"/"incorrect" class as appropriate
+
+```
+
+
+
+---
+
+## Coding Challenges ⚡
+
+
+### Introduction
+
+[**Compound Assignment With Augmented Multiplication**](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-javascript/compound-assignment-with-augmented-multiplication)
+#### Solution 🥳
+```javascript
+let a = 5;
+let b = 12;
+let c = 4.6;
+
+a *= 5;
+b *= 3;
+c *= 10;
+```
+
+
+### DOM
+
+[**Concatenating Strings with the Plus Equals Operator**](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-javascript/concatenating-strings-with-the-plus-equals-operator)
+#### Solution 🥳
+```javascript
+let myStr = "This is the first sentence.";
+myStr += " This is the second sentence.";
+```
+
+[**Use Bracket Notation to Find the Nth-to-Last Character in a String**](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/object-oriented-programming/use-dot-notation-to-access-the-properties-of-an-object)
+#### Solution 🥳
+```javascript
+let dog = {
+  name: "Spot",
+  numLegs: 4
+};
+
+console.log(dog.name);
+console.log(dog.numLegs);
+```
+
+### Values & Data Types - Operators - Expressions
+[**SECTION'S EXERCISES**](https://github.com/orjwan-alrajaby/gsg-QA-Nablus-training-2023/blob/main/learning-sprint-1/week1%20-%20javascript-from-first-steps-to-professional/day%202/tasks.md)
+#### Solution 🥳
+1-
+```javascript
+let a = 0;
+let b = "0";
+let c = false;
+let d = "false";
+
+console.log(a == b);
+// true (0 == "0" ==> same value - loosey goosey)
+console.log(b === c);
+// false
+// ("0" === false ==> same value but not same data type)
+console.log(!!d);
+// true
+// d ==> "false"
+// !d ==> false cuz the variable is not empty or false
+// !!d ==> true
+```
+2-
+```javascript
+console.log(4 + 5 * "7");
+// 39
+// 1st (5 * "7" ==> 35).
+// 2nd (4 + 35 ==> 39).
+```
+3-
+```javascript
+let result = 5 + 2 * 3 - 1;
+// 10
+// 1st (2 * 3 ==> 6).
+// 2nd (5 + 6 ==> 11).
+// 3rd (11 - 1 ==> 10).
+```
+4-
+```javascript
+let x = 10;
+let y = '10';
+
+console.log(x == y);
+// true
+// 10 == '10' ==> same value - loosey goosey
+console.log(x === y);
+// false
+// 10 === '10' ==> same value but not same data type
+```
+5-
+```javascript
+let num = "15";
+let isPositive = true;
+let result = (num > 10 && isPositive) || num < 0;
+
+console.log(result);
+// true
+// 1st num > 10 ==> "15" > 10 ==> true.
+// 2nd isPositive ==> true.
+// 3rd true && true ==> true.
+// The rest of the statement is ignored.
+```
+
+### Arrays
+
+[**Copy Array Items Using slice()**](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-data-structures/copy-array-items-using-slice)
+#### Solution 🥳
+```javascript
+function forecast(arr) {
+  return arr.slice(2, 4);
+}
+
+console.log(forecast(['cold', 'rainy', 'warm', 'sunny', 'cool', 'thunderstorms']));
+```
+[**Combine Arrays with the Spread Operator**](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-data-structures/combine-arrays-with-the-spread-operator)
+#### Solution 🥳
+```javascript
+function spreadOut() {
+  let fragment = ['to', 'code'];
+  let sentence = ['learning', ...fragment, 'is', 'fun'];
+  return sentence;
+}
+
+console.log(spreadOut());
+```
+
+### Objects
+
+[**Profile Lookup**](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-javascript/profile-lookup)
+#### Solution 🥳
+```javascript
+const contacts = [
+  {
+    firstName: "Akira",
+    lastName: "Laine",
+    number: "0543236543",
+    likes: ["Pizza", "Coding", "Brownie Points"],
+  },
+  {
+    firstName: "Harry",
+    lastName: "Potter",
+    number: "0994372684",
+    likes: ["Hogwarts", "Magic", "Hagrid"],
+  },
+  {
+    firstName: "Sherlock",
+    lastName: "Holmes",
+    number: "0487345643",
+    likes: ["Intriguing Cases", "Violin"],
+  },
+  {
+    firstName: "Kristian",
+    lastName: "Vos",
+    number: "unknown",
+    likes: ["JavaScript", "Gaming", "Foxes"],
+  },
+];
+
+function lookUpProfile(name, prop) {
+  for(let i = 0; i < contacts.length; i++) {
+    if(name === contacts[i].firstName) {
+      return contacts[i][prop] ? contacts[i][prop] : "No such property";
+    }
+  }
+
+  return "No such contact";
+}
+
+lookUpProfile("Akira", "likes");
+```
+
+### Quiz Project
+
+[**Write Reusable JavaScript with Functions**](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-javascript/write-reusable-javascript-with-functions)
+#### Solution 🥳
+```javascript
+function reusableFunction () {
+  console.log("Hi World");
+}
+
+reusableFunction();
+```
+[**Understanding Undefined Value returned from a Function**](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-javascript/understanding-undefined-value-returned-from-a-function)
+#### Solution 🥳
+```javascript
+let sum = 0;
+
+function addThree () {
+  sum = sum + 3;
+}
+
+function addFive () {
+  sum = sum + 5;
+}
+
+addThree();
+addFive();
+```
+[**Return a Value from a Function with Return**](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-javascript/return-a-value-from-a-function-with-return)
+#### Solution 🥳
+```javascript
+function timesFive (n) {
+  return n * 5;
+}
+```
