@@ -462,8 +462,121 @@ let board = document.getElementById("board");
 
 ## Arrays ⚡
 
+```javascript
+let synonyms = ["plethora", "array", "cornucopia"];
+```
+![synonyms](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExbjcwemVybzV3Nmc3ZWV5ZTZkMmE4dXh2ZWl2ZmVkNGF4c3ozMDRrbCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/QfGYYVrbay6kssMrYn/giphy.gif)
 
+💡 **Like** strings, arrays have a length, and each value has an index
+```javascript
+synonyms.length;
+// 3
+
+synonyms[1];
+// "plethora"
+
+synonyms.indexOf("cornucopia");
+// 2
+```
+
+Also **like** strings, we can check if an array contains a certain value
+```javascript
+synonyms.includes("plethora");
+// true
+
+synonyms.includes("variety");
+// false
+```
+
+**Unlike** strings, we can modify arrays
+```javascript
+synonyms[1] = "variety";
+// synonyms ==> ["plethora", "variety", "cornucopia"]
+
+let lastItem = synonyms.pop();
+// lastItem ==> "cornucopia", synonyms ==> ["plethora", "variety"]
+
+synonyms.push("multitude");
+// synonyms ==> ["plethora", "variety", "multitude"]
+```
+
+💡 Arrays can hold any type of items, or mix and match! 
+```javascript
+let mixedArray = ["Mohammad", 21, "Abohasan", true, document];
+```
+
+💡 Arrays can do lots of useful tricks!
+```javascript
+["c", "a", "d", "b"].sort();
+// ["a", "b", "c", "d"]
+
+[100, 50, 2].sort();
+// [100, 2, 50]
+
+["lions", "tigers", "bears oh my!"].join(" & ");
+// "lions & tigers & bears oh my!"
+
+[1, 2, 3].concat([4, 5, 6]);
+// [1, 2, 3, 4, 5, 6]
+
+let arr = [1, 2, 3];
+arr.push([4, 5, 6]);
+// arr ==> [1, 2, 3, [4, 5, 6]]
+```
+
+> Remember ✨ **MDN** ✨ is your friend!
+
+| Mutable | Immutable |
+| ------- | --------- |
+| "Mutable" data can be edited | "Immutable" data always stays the same |
+| (e.g. Arrays) | (e.g. strings & other primitives) | 
+| `let abcArray = ["a", "b", "c"];` <br />`abcArray[1] = "d";` <br />// abcArray ==>  ["a", "d", "c"] | `let abcString = "abc";` <br />`abcString[1] = "d";` <br />// abcString ==> "abc" |
+
+💡 Some actions "**mutate**" an array (e.g. `oldArray.push(newValue)`) .. aka change the array **in-place**
+
+Other actions do **not mutate** the original array, but instead **create a new copy** (e.g. `oldArray.concat(otherArray)`)
+
+```javascript
+let numbers1 = [1, 2, 3];
+let result1 = numbers1.push(4);
+// numbers1 ==> [1, 2, 3, 4]
+
+let numbers2 = [1, 2, 3];
+let result2 = numbers2.concat([4]);
+// numbers1 ==> [1, 2, 3]
+```
+
+💡 Variables themselves can also be (im)mutable
+```javascript
+let letVariable = "original value";
+letVariable = "new value";
+// letVariable ==> "new value"
+
+const constVariable = "original value";
+constVariable = "new Value";
+// TypeError: invalid assignment to const
+```
+
+🫧 **immutable variable** with **mutable value**
+```javascript
+const operands = [4, 6];
+const sum = operands[0] + operands[1];
+// sum = 10
+
+operands[0] = 5;
+// operands ==> [5, 6]
+const newSum = operands[0] + operands[1];
+// newSum = 11
+```
+
+🌟 Using **immutable** **data** & **variables** is usually **best**.
+
+---
 
 ## Objects ⚡
+
+
+---
+
 ## Tic-Tac-Toe ⚡
 ## Quiz Project ⚡
