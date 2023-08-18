@@ -791,28 +791,24 @@ let fact = {
 
 // TODO 3: Set the text of the statement element to the fact's statement
 statement.textContent = fact.statement;
+
+// TODO 4: Declare disable & enable functions to set or remove the "disabled" attribute from a given button element
+// disable(button) should set the button element's attribute "disabled" to the value ""
+// enable(button) should remove the attribute "disabled" from the button element
+const enable = (btnEl) => btnEl.disabled = false;
+// or btnEl.removeAttribute("disabled");
+const disable = (btnEl) => btnEl.disabled = true;
+// or btnEl.setAttribute("disabled", "");
+
+// TODO 5: Declare an isCorrect function that compares a guess to the right answer
+// isCorrect(guess) should return true if the guess matches the fact's answer
+const isCorrect = (guess) => guess === fact.answer;
 ```
 
 ---
 ---
 
 ```javascript
-// TODO 4: Declare disable & enable functions to set or remove the "disabled" attribute from a given button element
-// disable(button) should set the button element's attribute "disabled" to the value ""
-// enable(button) should remove the attribute "disabled" from the button element
-const enable = function (btnEl) {
-  btnEl.disabled = false;
-}
-const disable = function (btnEl) {
-  btnEl.disabled = true;
-}
-
-// TODO 5: Declare an isCorrect function that compares a guess to the right answer
-// isCorrect(guess) should return true if the guess matches the fact's answer
-const isCorrect = function (guess) {
-  return guess == fact.answer;
-}
-
 // TODO 6A: Use a for loop to add a click event listener to each of the optionButtons
 // TODO 6B: Within the event handler function, display the fact's explanation by setting the text of the explanation element
 
@@ -961,7 +957,7 @@ divide(15, 5);
 
 2.
 ```javascript
-const whisper = s => s.toLowerCase();
+const whisper = s => console.log(s.toLowerCase());
 
 whisper("AYA");
 ```
@@ -975,6 +971,8 @@ shorterThan([1, 2, 3], [1, 4]);
 shorterThan([1, 2], [1, 4, 3]);
 // true
 ```
+
+![ArrowMeme](https://i.redd.it/aj6eilme6wf31.jpg)
 
 ### Scope
 In JS it doesn't just matter **what** variables we declare 
