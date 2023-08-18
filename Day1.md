@@ -828,12 +828,269 @@ const isCorrect = function (guess) {
 
 ```
 
+---
+
+## Functions ⚡
+values **are** things.
+<br />
+variables **point to** things.
+<br />
+functions **do** things.
+<br />
+
+**parameters** are the inputs a function expects.
+```javascript
+// declaring (creating) a function
+function add3(x, y, z) {
+    console.log("My parameters are named x, y, z");
+    console.log("I received the arguments", x, y, z);
+    return x + y + z;
+}
+
+// calling (using) a function
+const sum = add3(4, 5, 6);
+// My parameters are named x, y, z
+// I received the arguments 4 5 6
+// sum ==> 15
+```
+**arguments** are the actual values the function is called with.
+<br />
+
+Parameters should be named like variables, and behave like variables within the function body.
+
+#### JS is pretty "loosey-goosey" about missing/extra arguments
+![NoArgsHere](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExdDlnNnRxM2FyZzdoc3NyZXEwMzZrZmdlejZ6aDluNnN5cTZ1emJyOCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/xT5LMrKFVsJgFUOYQE/giphy.gif)
+
+A `return` statement specifies the function's output value
+<br />
+Some functions don't `return` anything
+```javascript
+function sayHello(name) {
+    console.log("Oh hi, " + name + "!");
+}
+
+sayHello("Mohammad");
+// Oh hi, Mohammad!
+
+const hm = sayHello("Aya");
+// Oh hi, Aya!
+// hm ==> undefined
+```
+
+### 📋 Exercise
+| In the console, declare the following functions |
+| ------------- |
+| 1. `multiply`: given 2 numbers, return their product |
+| 2. `yell`: given a lowercase string, log it in all caps to the console |
+| 3. `longerThan`: given 2 arrays, return whether the first is longer than the second |
+
+1.
+```javascript
+function multiply (x, y) {
+  return x * y;
+}
+
+multiply(5, 3);
+// 15
+```
+
+2.
+```javascript
+function yell (s) {
+  console.log(s.toUpperCase());
+}
+
+yell("aya");
+// AYA
+```
+
+3.
+```javascript
+function longerThan (a, b) {
+  return a.length > b.length;
+}
+
+longerThan([1, 2, 3], [1, 4]);
+// true
+longerThan([1, 2, 3], [1, 4, 3]);
+// false 
+```
+
+### Arrow functions
+![ArrowFunctions](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExaWJvd3ZpNTd6ZzY2ZWR3MXcydHFkcDNmY2gwNGU1bXZtaW1iZWEyciZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/12M3HgyA9ge4z6/giphy.gif)
+
+The `=>` "fat arrow" lets us create an unnamed function without much code.
+```javascript
+(x, y) => x + y
+```
+aka an **arrow function**
+
+```javascript
+const add = (x, y) => x + y;
+```
+is equivalent to
+```javascript
+function add(x, y) {
+    return x + y;
+}
+```
+
+```javascript
+const square = x => x*x; 
+```
+is equivalent to
+```javascript
+function square(x) {
+    return x*x;
+}
+```
+
+### 📋 Exercise
+| In the console, declare the following functions using arrow functions |
+| ------------- |
+| 1. `divide`: given 2 numbers, return the first divided by the second |
+| 2. `whisper`: given an uppercase string, log it in all lowercase to the console |
+| 3. `shorterThan`: given 2 arrays, return whether the first is shorter than the second |
+
+1.
+const divide = (x, y) => x / y;
+
+divide(15, 5);
+// 3
+```
+
+2.
+```javascript
+const whisper = s => s.toLowerCase();
+
+whisper("AYA");
+```
+
+3.
+```javascript
+const shorterThan = (a, b) => a.length < b.length;
+
+shorterThan([1, 2, 3], [1, 4]);
+// false
+shorterThan([1, 2], [1, 4, 3]);
+// true
+```
+
+### Scope
+In JS it doesn't just matter **what** variables we declare 
+It also matters **where** we declare them
+**Scope** determines where variables are "in play"
+```javascript
+function declareBankruptcy() {
+    let bankruptcy = true;
+}
+
+declareBankruptcy();
+// undefined
+
+console.log(bankruptcy);
+// ReferenceError: bankruptcy is not defined
+```
+
+Scopes are **nested** within the program
+The widest scope is the **global** scope
+Each function gets its own new scope within the scope where it was declared
+
+```javascript
+let planet = "Jupiter";
+
+function scopeOut() {
+    let planet = "Mars";
+    console.log("Inner planet:", planet);
+}
+
+scopeOut();
+// Inner planet: Mars
+
+console.log("Outer planet:", planet);
+// Outer planet: Jupiter
+```
+
+Within each scope, you can access variables declared in a **wider** scope (e.g. global scope)
+But **not** those declared in a narrower scope (e.g. function scope)
+
+```javascript
+let globalVariable = "I live in global scope";
+
+function narrowerScope() {
+    console.log(globalVariable);
+    let localVariable = "I live in the function scope";
+}
+
+narrowerScope();
+// I live in global scope
+
+console.log(localVariable);
+// ReferenceError: localVariable is not defined
+```
+
+```javascript
+let feeling = "free";
+
+function trap() {
+    feeling = "boxedIn";
+}
+
+trap();
+
+console.log(feeling);
+// boxedIn
+```
+
+---
+
+## Events & Handlers ⚡
+Let's make our web page **interactive**!
+
+
+---
+
+## Conditionals ⚡
+
+
+---
+
+## Map & Filter ⚡
+
+
+---
+
+## Doggos Quiz Game ⚡
+
+
+---
+
+## Data Fetching & Promises ⚡
+
+
+---
+
+## Destructuring Data ⚡
+
+
+---
+
+## Async ⚡
+
+
+---
+
+## Modules ⚡
+
+
+---
+
+## Wrapping Up ⚡
 
 
 ---
 
 ## Coding Challenges ⚡
-
 
 ### Introduction
 
@@ -848,7 +1105,6 @@ a *= 5;
 b *= 3;
 c *= 10;
 ```
-
 
 ### DOM
 
@@ -872,6 +1128,7 @@ console.log(dog.numLegs);
 ```
 
 ### Values & Data Types - Operators - Expressions
+
 [**SECTION'S EXERCISES**](https://github.com/orjwan-alrajaby/gsg-QA-Nablus-training-2023/blob/main/learning-sprint-1/week1%20-%20javascript-from-first-steps-to-professional/day%202/tasks.md)
 #### Solution 🥳
 1-
