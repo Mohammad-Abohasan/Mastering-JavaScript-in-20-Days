@@ -721,7 +721,9 @@ const menu = {
         dessert: "gulab jamun"
     }
 };
+
 const tiramisu = menu.lunch.dessert;
+// tiramisu ==> "tiramisu"
 ```
 
 ### Objects in Arrays & Objects
@@ -733,6 +735,7 @@ const spices = [
     {name: "Mel C", nickname: "Sporty"},
     {name: "Victoria", nickname: "Posh"}
 ];
+
 const spiceGirls = {
     albums: ["Spice", "Spiceworld", "Forever"],
     motto: "Girl Power",
@@ -756,6 +759,7 @@ spiceGirls.motto;
 2.
 ```javascript
 spices[1];
+spiceGirls.members[1];
 ```
 
 3.
@@ -766,9 +770,8 @@ spiceGirls.albums[1];
 4.
 ```javascript
 spices[4].name;
+spiceGirls.members[4].name;
 ```
-
-
 
 ---
 
