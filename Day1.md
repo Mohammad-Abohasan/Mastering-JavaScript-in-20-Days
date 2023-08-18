@@ -568,12 +568,206 @@ operands[0] = 5;
 const newSum = operands[0] + operands[1];
 // newSum = 11
 ```
+![operandsArray](https://github.com/Mohammad-Abohasan/Mastering-JavaScript-in-20-Days/assets/74917940/96775121-7834-482a-8185-13a0a3bc24c1)
 
 🌟 Using **immutable** **data** & **variables** is usually **best**.
+
+```javascript
+let array1 = [1, 2, 3]; 
+let array2 = array1;
+
+array2[1] = 15;
+// array1 ==> [1, 15, 3]
+// array2 ==> [1, 15, 3]
+```
+![image](https://github.com/Mohammad-Abohasan/Mastering-JavaScript-in-20-Days/assets/74917940/15c57eee-d798-46e3-ac7c-7711cbe46ee9)
+
+```javascript
+let array1 = [1, 2, 3]; 
+let array2 = [...array1];
+
+array2[1] = 15;
+// array1 ==> [1, 2, 3]
+// array2 ==> [1, 15, 3]
+```
+![image](https://github.com/Mohammad-Abohasan/Mastering-JavaScript-in-20-Days/assets/74917940/31890c9e-80d4-43f8-b0cc-346c33131cc9)
 
 ---
 
 ## Objects ⚡
+Objects collect multiple values together to describe more complex data.
+Similar to how we can point at different values using variables in our code, objects let us point at related values using properties in the object.
+
+We saw an object earlier:
+```javascript
+const js = {
+    name: "JavaScript",
+    abbreviation: "JS",
+    isAwseome: true,
+    officialSpec: "ECMAScript",
+    birthYear: 1995,
+    creator: "Brendan Eich"
+};
+```
+
+Getting property values:
+```javascript
+js.name
+// "JavaScript"
+js["isAwesome"]
+// true
+```
+
+Using property values:
+```javascript
+js.name.startsWith("Java");
+// true
+let age = 2023 - js.birthYear;
+// age ==> 28
+```
+
+Setting property values:
+```javascript
+const indecisive = {
+    lunch: "sandwich"
+};
+
+indecisive.lunch = "tacos";
+indecisive.snack = "chips";
+/*
+  indecisive ==> {
+    lunch: "tacos",
+    snack = "chips"
+  };
+*/
+```
+
+💡 `object` is **mutable**
+![objectIsMutable](https://github.com/Mohammad-Abohasan/Mastering-JavaScript-in-20-Days/assets/74917940/658c9480-51e5-4d5d-a79d-3afb581b4358)
+
+
+💡 to make it **immutable**
+<br />
+`Object.freeze()`
+
+```javascript
+const indecisive = {
+    lunch: "sandwich"
+};
+
+Object.freeze(indecisive);
+
+indecisive.lunch = "tacos";
+indecisive.snack = "chips";
+// no change
+/*
+  indecisive ==> {
+    lunch: "sandwich"
+  };
+*/ 
+```
+
+### 📋 Exercise
+Create an object representing you!
+Add properties for facts important to you, e.g.: 
+
+```javascript
+const mohammad = {
+  fname: "Mohammad",
+  lname: "Abohasan",
+  birthYear: 2002,
+  pet: null,
+  languages: ["English", "Turkish", "Arabic"],
+  country: "Palestine",
+  gpa: 93,
+  age: function () {
+    console.log(2023 - this.birthYear);
+  }
+};
+```
+
+```javascript
+mohammad.age();
+// 21
+```
+
+💡 `this` in a method lets us reference other properties on the object
+```javascript
+mohammad.speak = function () {
+  console.log(`Hi my name is ${this.fname} ${this.lname}`);
+};
+
+mohammad.speak();
+// Hi my name is Mohammad Abohasan
+```
+
+🧨 But be careful with `this`!
+<br />
+![DANGER](https://c.tenor.com/7tgvcDTOfMQAAAAC/tenor.gif)
+<br />
+Its behavior is complicated & can be tricky
+
+### Nested objects
+```javascript
+const menu = {
+    lunch: {
+        appetizer: "salad",
+        main: "spaghetti",
+        dessert: "tiramisu"
+    },
+    dinner: {
+        appetizer: "samosa",
+        main: "saag paneer",
+        dessert: "gulab jamun"
+    }
+};
+const tiramisu = menu.lunch.dessert;
+```
+
+### Objects in Arrays & Objects
+```javascript
+const spices = [
+    {name: "Emma", nickname: "Baby"},
+    {name: "Geri", nickname: "Ginger"},
+    {name: "Mel B", nickname: "Scary"},
+    {name: "Mel C", nickname: "Sporty"},
+    {name: "Victoria", nickname: "Posh"}
+];
+const spiceGirls = {
+    albums: ["Spice", "Spiceworld", "Forever"],
+    motto: "Girl Power",
+    members: spices
+};
+```
+
+### 📋 Exercise
+| From the spiceGirls object, how can we retrieve |
+| ------------- |
+| 1. "Girl Power" |
+| 2. The object representing Ginger Spice |
+| 3. "Spiceworld" |
+| 4. "Victoria" |
+
+1.
+```javascript
+spiceGirls.motto;
+```
+
+2.
+```javascript
+spices[1];
+```
+
+3.
+```javascript
+spiceGirls.albums[1];
+```
+
+4.
+```javascript
+spices[4].name;
+```
+
 
 
 ---
