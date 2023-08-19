@@ -802,7 +802,7 @@ const disable = (btnEl) => btnEl.disabled = true;
 
 // TODO 5: Declare an isCorrect function that compares a guess to the right answer
 // isCorrect(guess) should return true if the guess matches the fact's answer
-const isCorrect = (guess) => guess === fact.answer;
+const isCorrect = (guess) => guess === fact.answer.toString();
 ```
 
 ---
