@@ -1117,6 +1117,77 @@ document.getElementsByName("false")[0].addEventListener("click", () => {
 ---
 
 ## Conditionals ⚡
+The (condition) is usually an expression that evaluates to a boolean.
+
+```javascript
+function compare(x, y) {
+    if (x > y) {
+        // x > y <== 1st condition
+        console.log(x, "is greater than", y);
+    } else if (x < y) {
+        // x < y <== 2st condition
+        console.log(x, "is less than", y);
+    } else {
+        console.log(x, "is equal to", y);
+    }
+}
+
+compare(5, 10);
+// 5 is less than 10
+```
+
+If it's given some other value, JS will convert it to a boolean and decide based on its "truthiness"
+```javascript
+if ("nonempty strings are truthy") {
+    console.log("this line will run");
+}
+// this line will run
+```
+
+### 📋 Exercise
+| In the console |
+| ------------- |
+| 1. Write a conditional that logs a message saying whether your first name or last name is longer |
+| 2. Write a function isEmpty(array) that returns whether a given array is empty or not |
+| 3. Is an empty array truthy or falsy? Write a conditional to find out |
+
+1.
+```javascript
+let fname = "Mohammad", lname = "Abohasan"; 
+
+if(fname.length > lname.length) {
+  console.log(fname, "is longer than", lname);
+} else if(fname.length < lname.length) {
+  console.log(lname, "is longer than", fname);
+} else {
+  console.log(fname, "and", lname, "are of equal length");
+}
+// Mohammad and Abohasan are of equal length
+```
+
+2.
+```javascript
+function isEmpty(array) {
+  return array.length ? true : false;
+}
+
+isEmpty([]);
+// true
+
+isEmpty([5]);
+// false
+```
+
+3.
+Truthy,
+```javascript
+if([]) {
+	console.log("empty array is truthy");
+} else {
+	console.log("empty array is falsy");
+}
+```
+
 
 
 ---
