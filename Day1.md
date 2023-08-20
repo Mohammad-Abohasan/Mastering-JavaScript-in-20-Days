@@ -804,20 +804,26 @@ const disable = (btnEl) => btnEl.disabled = true;
 // isCorrect(guess) should return true if the guess matches the fact's answer
 const isCorrect = (guess) => guess === fact.answer.toString();
 
-// TODO 6A: Use a for loop to add a click event listener to each of
+// TODO 6A: Use a for loop to add a click event listener to each of the optionButtons
+for(let button of optionButtons) {
+  button.addEventListener("click", (event) => {
+    // TODO 6B: Within the event handler function, display the fact's explanation by setting the text of the explanation element
+    explanation.textContent = fact.explanation;
 
+    // TODO 7: Within the event handler function, 
+    // Use a for loop to disable all the option buttons
+    for(let button of optionButtons) {
+      disable(button);
+    }
 
-// TODO 6B: Within the event handler function, display the fact's explanation by setting the text of the explanation element
-
-// TODO 7: Within the event handler function, 
-// Use a for loop to disable all the option buttons
-
-
-// TODO 8: Within the event handler function,
-// Get the guessed value from the clicked button
-// Use a conditional to compare the guess to the fact's answer
-// and add the "correct"/"incorrect" class as appropriate
-
+    // TODO 8: Within the event handler function,
+    // Get the guessed value from the clicked button
+    // Use a conditional to compare the guess to the fact's answer
+    // and add the "correct"/"incorrect" class as appropriate
+    event.target.className = isCorrect(event.target.value) ? "correct" : "incorrect";
+    // or event.target.classList.add("<correct / incorrect>");
+  });
+}
 ```
 
 ---
@@ -1121,15 +1127,15 @@ The (condition) is usually an expression that evaluates to a boolean.
 
 ```javascript
 function compare(x, y) {
-    if (x > y) {
-        // x > y <== 1st condition
-        console.log(x, "is greater than", y);
-    } else if (x < y) {
-        // x < y <== 2st condition
-        console.log(x, "is less than", y);
-    } else {
-        console.log(x, "is equal to", y);
-    }
+  if (x > y) {
+    // x > y <== 1st condition
+    console.log(x, "is greater than", y);
+  } else if (x < y) {
+    // x < y <== 2st condition
+    console.log(x, "is less than", y);
+  } else {
+    console.log(x, "is equal to", y);
+  }
 }
 
 compare(5, 10);
@@ -1139,7 +1145,7 @@ compare(5, 10);
 If it's given some other value, JS will convert it to a boolean and decide based on its "truthiness"
 ```javascript
 if ("nonempty strings are truthy") {
-    console.log("this line will run");
+  console.log("this line will run");
 }
 // this line will run
 ```
@@ -1188,7 +1194,66 @@ if([]) {
 }
 ```
 
+### Loops
 
+![Loop](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExcXdmcnR4azJ6d2h5bGFzd3Q2eTJrNTdodDgwcHQ4bjg2dTh3ZTVmcyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/URkVaXX4cubqCxLYma/giphy.gif)
+
+<br />
+
+**Loops** let us run the same chunk of code multiple times this is called **iteration**
+
+<br />
+
+`for ... of` loops let us more easily iterate over items in a collection.
+
+```javascript
+const numbers = [1, 2, 3];
+
+for (let i = 0; i < numbers.length; i++) {
+  console.log(numbers[i]);
+}
+
+for (let n of numbers) {
+  console.log(n);
+}
+```
+
+```javascript
+// We can use for...of to iterate over characters in a string
+for (let char of "ALOHA") {
+  console.log(char);
+}
+
+// or items in an array
+for (let item of ["pop", 6, "squish"]) {
+  console.log(typeof item);
+}
+```
+because strings & arrays are **iterables**.
+
+### 📋 Exercise
+| In the console |
+| ------------- |
+| 1. Use a for...of loop to attach an event listener to each button |
+| 2. Within the event handler, <br /> ● populate the explanation text in the given element. <br /> ● Use another for...of loop to disable all the buttons. |
+
+1.
+```javascript
+for(let button of optionButtons) {
+  button.addEventListener("click", (event) => {
+  // do something
+  });
+}
+```
+
+2.
+```javascript
+explanation.textContent = fact.explanation;
+
+for(let button of optionButtons) {
+  disable(button);
+}
+```
 
 ---
 
