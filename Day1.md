@@ -1198,11 +1198,7 @@ if([]) {
 
 ![Loop](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExcXdmcnR4azJ6d2h5bGFzd3Q2eTJrNTdodDgwcHQ4bjg2dTh3ZTVmcyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/URkVaXX4cubqCxLYma/giphy.gif)
 
-<br />
-
 **Loops** let us run the same chunk of code multiple times this is called **iteration**
-
-<br />
 
 `for ... of` loops let us more easily iterate over items in a collection.
 
@@ -1258,7 +1254,49 @@ for(let button of optionButtons) {
 ---
 
 ## Map & Filter ⚡
+![FilterMapReduce](https://static.observableusercontent.com/files/2f820ed5e9c8ce56f07504c382b6c126805d04edf297aaebf57f4c8c10a28556e185f26ca4a87f024182257cf6d2a8a2b31cf85d81d4fa871626715e0f16eab4)
 
+### `map`
+map calls a function on each item in an array to create a new array.
+```javascript
+const spices = [
+    {name: "Emma", nickname: "Baby"},
+    {name: "Geri", nickname: "Ginger"},
+    {name: "Mel B", nickname: "Scary"},
+    {name: "Mel C", nickname: "Sporty"},
+    {name: "Victoria", nickname: "Posh"}
+];
+
+const nicknames = spices.map(s => `${s.nickname} Spice`);
+// nicknames ==> [ "Baby Spice", "Ginger Spice", "Scary Spice", "Sporty Spice", "Posh Spice" ]
+```
+
+String templates are useful too! Make them with backticks and ${}
+
+### `filter `
+filter calls a true/false function on each item and creates a new array with only the items where the function returns true.
+```javascript
+const mels = spices.filter(s => s.name.includes("Mel"));
+// mels ==> [{name: "Mel B", nickname: "Scary"}, {name: "Mel C", nickname: "Sporty"}]
+```
+
+### 📋 Exercise
+| From the spices array, use map and filter to |
+| ------------- |
+| 1. Create a new array names with only the name of each girl. |
+| 2. Create a new array endInY with just the girls whose nickname ends in "y". |
+
+1.
+```javascript
+const names = spices.map(s => s.name);
+// names ==> [ "Emma", "Geri", "Mel B", "Mel C", "Victoria" ]
+```
+
+2.
+```javascript
+const endInY = spices.filter(s => s.nickname[s.nickname.length - 1] === 'y'));
+// endInY ==> [ {name: "Emma", nickname: "Baby"}, {name: "Mel B", nickname: "Scary"}, {name: "Mel C", nickname: "Sporty"}]
+```
 
 ---
 
