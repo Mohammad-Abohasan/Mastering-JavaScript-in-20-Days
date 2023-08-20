@@ -803,15 +803,11 @@ const disable = (btnEl) => btnEl.disabled = true;
 // TODO 5: Declare an isCorrect function that compares a guess to the right answer
 // isCorrect(guess) should return true if the guess matches the fact's answer
 const isCorrect = (guess) => guess === fact.answer.toString();
-```
 
----
----
+// TODO 6A: Use a for loop to add a click event listener to each of
 
-```javascript
-// TODO 6A: Use a for loop to add a click event listener to each of the optionButtons
+
 // TODO 6B: Within the event handler function, display the fact's explanation by setting the text of the explanation element
-
 
 // TODO 7: Within the event handler function, 
 // Use a for loop to disable all the option buttons
@@ -949,6 +945,7 @@ function square(x) {
 | 3. `shorterThan`: given 2 arrays, return whether the first is shorter than the second |
 
 1.
+```javascript
 const divide = (x, y) => x / y;
 
 divide(15, 5);
@@ -1040,11 +1037,82 @@ console.log(feeling);
 // boxedIn
 ```
 
+### Difference between `var`, `let`, and `const`
+
+|               |       var      |     let     |    const    |
+| ------------- | -------------- | ----------- | ----------- |
+| Scope         | Function scope | Block scope | Block scope |
+| Hoisting      | Allowed        | Not allowed | Not allowed |
+| Reassign      | Allowed        | Allowed     | Not allowed |
+| Redeclaration | Allowed        | Not allowed | Not allowed |
+
 ---
 
 ## Events & Handlers ⚡
 Let's make our web page **interactive**!
 
+We can detect events with JS using an event listener
+The `addEventListener()` method lets us listen for events on a DOM element
+```javascript
+document.addEventListener("click", (event) => {
+    console.log(event);
+});
+```
+
+### Event listing
+- "click"
+- "dblclick"
+- "mouseover"
+- "mouseout"
+- and lots [more](https://developer.mozilla.org/en-US/docs/Web/Events)!
+
+### 📋 Exercise
+| In the console, on our quiz add event listeners to: |
+| ------------- |
+| 1. Capitalize the text of the "true" button when it is clicked |
+| 2. Change the h1 text to "hovering" when the mouse moves into the element |
+| 3. Change the h1 text to "Quiz.js" when the mouse moves out of the element |
+
+1.
+```javascript
+document.getElementsByName("true")[0].addEventListener("click", (event) => {
+  event.target.textContent = event.target.textContent.toUpperCase();
+});
+```
+
+2.
+```javascript
+document.getElementsByTagName("h1")[0].addEventListener("mouseover", (event) => {
+  event.target.textContent = "hovering";
+});
+```
+
+3.
+```javascript
+document.getElementsByTagName("h1")[0].addEventListener("mouseout", (event) => {
+  event.target.textContent = "Quiz.js";
+});
+```
+
+### 📋 Exercise
+| In the console, on our quiz add event listeners to the buttons so that |
+| ------------- |
+| 1. When the "true" button is clicked, the button's text becomes "clicked true" |
+| 2. When the "false" button is clicked, the "explanation" div text becomes "clicked false" |
+
+1.
+```javascript
+document.getElementsByName("true")[0].addEventListener("click", (event) => {
+  event.target.textContent = "clicked true";
+});
+```
+
+2.
+```javascript
+document.getElementsByName("false")[0].addEventListener("click", () => {
+  document.getElementById("explanation").textContent = "clicked false";
+});
+```
 
 ---
 
