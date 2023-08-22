@@ -1302,17 +1302,78 @@ const endInY = spices.filter(s => s.nickname[s.nickname.length - 1] === 'y'));
 
 ## Doggos Quiz Game ⚡
 
+### 📋 Exercise
+| In the Doggo Fetch starter, follow TODO 1 to fill in the getMultipleChoices function using a while loop |
+| ------------- |
 
-
+```javascript
+// TODO 1
+// Given an array of possible answers, a correct answer value, and a number of choices to get,
+// return a list of that many choices, including the correct answer and others from the array
+function getMultipleChoices(n, correctAnswer, array) {
+    // Use a while loop and the getRandomElement() function
+    // Make sure there are no duplicates in the array
+    const choices = [correctAnswer];
+    while (choices.length < n) {
+        let randomElement = getRandomElement(array);
+        choices.indexOf(randomElement) == -1 && choices.push(randomElement);
+    }
+    return shuffleArray(choices);
+}
+```
 
 ---
 
 ## Data Fetching & Promises ⚡
 
+`fetch()` lets us use JS to load data from APIs.
+```javascript
+const response = fetch("https://dog.ceo/api/breed/hound/list");
+console.log(response);
+// Promise { <state>: "pending" }
+```
+
+### Promises
+
+Promises can be in 3 possible states:
+- **pending**: still waiting for the value, hang tight.
+- **fulfilled** (aka "**resolved**"): finally got the value, all done.
+- **rejected**: sorry couldn't get the value, all done.
+
+It takes time for Promises to resolve, so they are "**asynchronous**".
+
+`await` lets us tell JS to stop and wait for an asynchronous operation to finish.
+![await](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExcXRuMWhic2V2NWlkaHQ3MXIwMWEyeDkxbnBuZXhlOHE0Y3U5MTVlYiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/VIEy2m9UtWatviq1U6/giphy.gif)
+
+```javascript
+const response = await fetch("https://dog.ceo/api/breed/hound/list");
+console.log(response);
+// Response { type: "cors", url: "https://dog.ceo/api/breed/hound/list", redirected: false, status: 200, ok: true, statusText: "OK", headers: Headers(2), body: ReadableStream, bodyUsed: false }
+```
+
+`body: ReadableStream`
+Calling the .json() method on the response parses its `body` as a JSON object
+```javascript
+const response = await fetch("https://dog.ceo/api/breed/hound/list");
+const body = await response.json();
+
+console.log(body);
+// Object { message: (7) […], status: "success" }
+```
+
+another option
+
+```javascript
+const response = await fetch("https://dog.ceo/api/breed/hound/list").then((value) => value.json());
+
+console.log(response);
+// Object { message: (7) […], status: "success" }
+```
 
 ---
 
 ## Destructuring Data ⚡
+
 
 
 ---
