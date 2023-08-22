@@ -1374,7 +1374,63 @@ console.log(response);
 
 ## Destructuring Data ⚡
 
+Destructuring is a fancy way of declaring multiple variables at once By **extracting** values from an object with their property names.
+![Destructuring](https://raw.githubusercontent.com/SaraVieira/open-source-stickers/master/stickers/deconstructing-unicorn/unicorn.png)
 
+```javascript
+const spices = [
+    {name: "Emma", nickname: "Baby"},
+    {name: "Geri", nickname: "Ginger"},
+    {name: "Mel B", nickname: "Scary"},
+    {name: "Mel C", nickname: "Sporty"},
+    {name: "Victoria", nickname: "Posh"}
+];
+```
+
+```javascript
+let {name, nickname} = spices[0];
+// name ==> "Emma", nickname ==> "Baby"
+```
+
+```javascript
+let {nickname} = spices[0];
+// nickname ==> "Baby"
+```
+
+```javascript
+let {nickname, name} = spices[0];
+// nickname ==> "Baby", name ==> "Emma"
+```
+
+We can also destructure Arrays, assigning variables for their items.
+```javascript
+const arr = [1, 2, 3, 4, 5];
+
+const [a, b, c, d, e] = arr;
+// a ==> 1, b ==> 2, c ==> 3, d ==> 4, e ==> 5
+
+const [, , x] = arr;
+// x ==> 3
+
+const [k, ...rest] = arr;
+// k ==> 1, rest ==> [2, 3, 4, 5]
+```
+
+### 📋 Exercise
+| In your Doggo Fetch file, follow TODO 2 to complete the getBreedFromURL function with destructuring |
+| ------------- |
+```javascript
+// TODO 2
+// Given a URL such as "https://images.dog.ceo/breeds/poodle-standard/n02113799_2280.jpg"
+// return the breed name string as formatted in the breed list, e.g. "standard poodle"
+function getBreedFromURL(url) {
+    // The string method .split(char) may come in handy
+    // Try to use destructuring as much as you can
+    let [, , , , breed] = url.split("/");
+    breed = breed.split("-").reverse().join(" ");
+    return breed;
+}
+```
 
 ---
 
