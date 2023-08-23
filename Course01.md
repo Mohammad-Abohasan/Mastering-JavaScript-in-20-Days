@@ -1,5 +1,5 @@
-Day 01
-======
+JavaScript: From First Steps to Professional
+============================================
 
 ## Introduction ⚡
 
@@ -604,6 +604,7 @@ indecisive.snack = "chips";
 ```
 
 💡 `object` is **mutable**
+<br />
 ![objectIsMutable](https://github.com/Mohammad-Abohasan/Mastering-JavaScript-in-20-Days/assets/74917940/658c9480-51e5-4d5d-a79d-3afb581b4358)
 
 
@@ -1564,11 +1565,97 @@ Modules let us split big codebases across multiple files.
 <br />
 ![Lego](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExaWZ4MzF1cGkyazRud2d3OWtnYXQwejFscThqdXN3MDhxYnk1dmplNyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/l0JMrPWRQkTeg3jjO/giphy.gif)
 
+### Top-level `await`
 
----
+At the end of our doggo program we had to use `await` outside of a function. This isn't usually possible in JS.
 
-## Wrapping Up ⚡
+Take a closer look at our script tag: 
+```html
+<script type="module">
+    // ...
+</script>
+```
+JS modules **work differently** from JS scripts.
 
+<br />
+
+One difference is that we can't use await outside of a function in a script
+```html
+<script>
+    await fetch("https://dog.ceo/api/breed/hound/list");
+</script>
+```
+
+### Module scope
+
+Another difference is that modules create their own scope.
+![moduleScope](https://github.com/Mohammad-Abohasan/Mastering-JavaScript-in-20-Days/assets/74917940/e19ddbb8-c090-42ab-a3ce-0cb1b3694562)
+
+### import & export
+
+`export` lets us expose variables from our module's scope to the outside world.
+```javascript
+// myModule.js
+const veryUsefulFunction = () => "I came from a module";
+export { veryUsefulFunction };
+```
+
+`import` lets us use an exposed variable from another module
+```javascript
+// otherModule.js
+import { veryUsefulFunction } from './myModule.js'
+veryUsefulFunction();
+```
+
+### Debugging
+
+`console.log()`
+`console.warn()`
+`console.error()`
+```javascript
+function whyIsntThisWorking(input) {
+    console.log("Well at least we got this far");
+    console.log(input);
+    return thingThatDoesntWork(input);
+}
+```
+
+The `debugger` statement creates a breakpoint where JS will pause and let you look around
+```javascript
+function whyIsntThisWorking(input) {
+    debugger;
+    return thingThatDoesntWork(input);
+} 
+```
+
+Different browsers' debuggers work differently
+- [Firefox](https://developer.mozilla.org/en-US/docs/Learn/Common_questions/Tools_and_setup/What_are_browser_developer_tools#the_javascript_debugger)
+- [Chrome](https://developer.chrome.com/docs/devtools/javascript/)
+- [Safari](https://support.apple.com/guide/safari-developer/debugging-overview-devd24689f72/mac)
+
+### Error handling
+
+Usually errors will cause JS to stop running our code.
+<br />
+Sometimes that's appropriate and what we want JS to do.
+```javascript
+thisThrowsAnError();
+console.log("I'll never get here");
+```
+
+`try` lets us "watch out" for potential errors
+<br/>
+its friend `catch` lets us manage errors when they occur
+```javascript
+try {
+    thisMightThrowAnError();
+} catch (error) {
+    console.error("As if! Error:", error); 
+    console.log("Whatever, let's press on anyway");
+}
+console.log("still rollin' with the homies");
+```
+![tryCatch](https://timmousk.com/wp-content/uploads/2022/03/6astm3.webp)
 
 ---
 
@@ -1773,4 +1860,143 @@ addFive();
 function timesFive (n) {
   return n * 5;
 }
+```
+
+### Quiz Project Functions
+
+[**Global Scope and Functions**](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-javascript/global-scope-and-functions)
+#### Solution 🥳
+```javascript
+const myGlobal = 10;
+let oopsGlobal;
+
+function fun1() {
+  oopsGlobal = 5;
+}
+
+function fun2() {
+  let output = "";
+  if (typeof myGlobal != "undefined") {
+    output += "myGlobal: " + myGlobal;
+  }
+  if (typeof oopsGlobal != "undefined") {
+    output += " oopsGlobal: " + oopsGlobal;
+  }
+  console.log(output);
+}
+```
+[**Local Scope and Functions**](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-javascript/local-scope-and-functions)
+#### Solution 🥳
+```javascript
+function myLocalScope() {
+  let myVar = 21;
+  console.log('inside myLocalScope', myVar);
+}
+
+myLocalScope();
+console.log('outside myLocalScope', myVar);
+```
+
+### Events & Handlers
+
+[**Global vs. Local Scope in Functions**](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-javascript/global-vs--local-scope-in-functions)
+#### Solution 🥳
+```javascript
+const outerWear = "T-Shirt";
+
+function myOutfit() {
+  const outerWear = "sweater";
+  return outerWear;
+}
+
+myOutfit();
+```
+[**Stand in Line**](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-javascript/stand-in-line)
+#### Solution 🥳
+```javascript
+function nextInLine(arr, item) {
+  arr.push(item);
+  item = arr.shift()
+  return item;
+}
+
+let testArr = [1, 2, 3, 4, 5];
+
+console.log("Before: " + JSON.stringify(testArr));
+console.log(nextInLine(testArr, 6));
+console.log("After: " + JSON.stringify(testArr));
+```
+
+### Conditionals
+
+[**Use Multiple Conditional (Ternary) Operators**](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-javascript/use-multiple-conditional-ternary-operators)
+#### Solution 🥳
+```javascript
+function checkSign(num) {
+  return num === 0 ? "zero"
+                   : num > 0 ? "positive" 
+                             : "negative";
+}
+
+checkSign(10);
+```
+
+### Map & Filter
+
+[**Use the map Method to Extract Data from an Array**](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/functional-programming/use-the-map-method-to-extract-data-from-an-array)
+#### Solution 🥳
+```javascript
+// ...
+
+const ratings = watchList.map(element => {
+  return {
+    title: element["Title"],
+    rating: element["imdbRating"]
+  }
+});
+
+console.log(JSON.stringify(ratings));
+```
+[**Use the filter Method to Extract Data from an Array**](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/functional-programming/use-the-filter-method-to-extract-data-from-an-array)
+#### Solution 🥳
+```javascript
+// ..
+const ratings = watchList.map(element => {
+  return {
+    title: element["Title"],
+    rating: element["imdbRating"]
+  }
+});
+
+const filteredList = ratings.filter(element => element.rating >= 8);
+
+console.log(filteredList);
+```
+
+### Doggos Quiz Game
+
+[**Golf Code**](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-javascript/golf-code)
+#### Solution 🥳
+```javascript
+const names = ["Hole-in-one!", "Eagle", "Birdie", "Par", "Bogey", "Double Bogey", "Go Home!"];
+
+function golfScore(par, strokes) {
+  if(strokes === 1) {
+    return "Hole-in-one!";
+  } else if(strokes >= par + 3) {
+    return "Go Home!";
+  } else if(strokes === par + 2) {
+    return "Double Bogey";
+  } else if(strokes === par + 1) {
+    return "Bogey";
+  } else if(strokes === par) {
+    return "Par";
+  } else if(strokes === par - 1) {
+    return "Birdie";
+  } else {
+    return "Eagle";
+  }
+}
+
+golfScore(5, 4);
 ```
