@@ -93,7 +93,7 @@ JavaScript: From First Steps to Professional
     - [Doggos Quiz Game](#doggos-quiz-game)
       - [Challenge - 18](#solution--17)
     - [Data Fetching \& Promises - Destructuring Data - Async - Modules](#data-fetching--promises---destructuring-data---async---modules)
-      - [Task - 1](##solution--18)
+      - [Task - 1](#solution--18)
 
 Wrapping up
 ---
