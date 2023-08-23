@@ -95,7 +95,6 @@ JavaScript: From First Steps to Professional
     - [Data Fetching \& Promises - Destructuring Data - Async - Modules](#data-fetching--promises---destructuring-data---async---modules)
       - [Task - 1](#solution--18)
 
-Wrapping up
 ---
 
 ## Introduction ⚡
