@@ -15,11 +15,10 @@ In this challenge, you will enhance your JavaScript skills and knowledge. Each d
  - [Deep JavaScript Foundations, v3](https://frontendmasters.com/courses/deep-javascript-v3/)
 
 ## Coding Challenges
- - [First Challenge](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-algorithm-scripting/convert-celsius-to-fahrenheit)
- - [Second Challenge](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-algorithm-scripting/reverse-a-string)
+💡 [freeCodeCamp: **Mohammad-Abohasan**](https://www.freecodecamp.org/Mohammad-Abohasan)
 
 ## Daily Learning Process
-1. Each day, you will watch 90 minutes of the assigned courses listed above.
+1. Each day, you will watch a portion of the above-mentioned assigned courses.
 2. Solve all the JavaScript coding challenges that will be provided by the GSG team.
 3. Summarize your daily learning and document your challenge solutions on a separate readme page.
 4. Repeat the process for the next 20 days, gradually advancing your JavaScript skills.
@@ -32,4 +31,4 @@ In this challenge, you will enhance your JavaScript skills and knowledge. Each d
 - Celebrate your achievements and reflect on your growth throughout the challenge.
 
 ## Folder Structure
--  [**Day 1**](https://github.com/Mohammad-Abohasan/Mastering-JavaScript-in-20-Days/blob/master/Day1.md)
+📍 [**Course 1**](https://github.com/Mohammad-Abohasan/Mastering-JavaScript-in-20-Days/blob/master/Course01.md)
