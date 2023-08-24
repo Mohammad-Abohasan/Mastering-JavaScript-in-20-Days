@@ -32,5 +32,7 @@ In this challenge, you will enhance your JavaScript skills and knowledge. Each d
 
 ## Folder Structure
 📍 [**Course 1**](https://github.com/Mohammad-Abohasan/Mastering-JavaScript-in-20-Days/blob/master/Course01.md)
+<br />
 📍 [**Course 2**](https://github.com/Mohammad-Abohasan/Mastering-JavaScript-in-20-Days/blob/master/Course02.md)
+<br />
 📍 [**Course 3**](https://github.com/Mohammad-Abohasan/Mastering-JavaScript-in-20-Days/blob/master/Course03.md)
