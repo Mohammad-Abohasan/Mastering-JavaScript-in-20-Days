@@ -2101,3 +2101,4 @@ golfScore(5, 4);
 
 [**Rick & Morty Characters List**](https://github.com/orjwan-alrajaby/gsg-QA-Nablus-training-2023/blob/main/learning-sprint-1/week1%20-%20javascript-from-first-steps-to-professional/day%206/task.md)
 #### Solution 🥳
+[**Task - 1**](https://github.com/Mohammad-Abohasan/Mastering-JavaScript-in-20-Days/tree/master/Tasks/Rick%20and%20Morty)
