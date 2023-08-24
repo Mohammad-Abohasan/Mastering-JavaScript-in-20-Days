@@ -1,0 +1,43 @@
+* {
+  padding: 0px;
+  margin: 5px;
+}
+
+body {
+  background-color: gainsboro;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.title {
+  color: black;
+  font-size: 48px;
+  text-align: center;
+  margin: 40px;
+}
+
+.error {
+  color: #FF0000;
+  text-align: center;
+}
+
+ul {
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  list-style-type: none;
+}
+
+ul li {
+  flex: 1 0 25%;
+  padding: 10px;
+}
+
+li img {
+  width: 300px;
+}
+
+li .description {
+  padding: 5px;
+  text-align: center;
+  border: 0.5px lightgray solid;
+}
