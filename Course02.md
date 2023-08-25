@@ -186,9 +186,39 @@ const output = multiplyBy2(3); // 6
 ```
 ![Arrow](https://github.com/Mohammad-Abohasan/Mastering-JavaScript-in-20-Days/assets/74917940/a53465be-2814-4b84-a40a-7140fe67c15f)
 
+### 💡 We can even pass in multiplyBy2 directly without a name
+But it’s still just the code of a function being passed into copyArrayAndManipulate.
+
+```javascript
+function copyArrayAndManipulate(array, instructions) {
+  const output = [];
+  for (let i = 0; i < array.length; i++) {
+    output.push(instructions(array[i]));
+  }
+  return output;
+}
+
+// const multiplyBy2 = input => input * 2;
+// const result = copyArrayAndManipulate([1, 2, 3], multiplyBy2);
+
+const result = copyArrayAndManipulate([1, 2, 3], input => input*2);
+```
+
+### 🫧 Anonymous and arrow functions
+- Improve immediate legibility of the code.
+- But at least for our purposes here they are "**syntactic sugar**".
+- Understanding how they’re working under-the-hood is vital to avoid confusion.
+
+### ✨ Pair Programming
+
+![PairProgramming](https://github.com/Mohammad-Abohasan/Mastering-JavaScript-in-20-Days/assets/74917940/d75adaf1-f01f-4a16-8a8e-dd5c33e709f6)
+
 ---
 
 ## Closure ⚡
+
+ 
+
 
 ---
 
