@@ -209,6 +209,8 @@ const result = copyArrayAndManipulate([1, 2, 3], input => input*2);
 - But at least for our purposes here they are "**syntactic sugar**".
 - Understanding how they’re working under-the-hood is vital to avoid confusion.
 
+**Syntactic sugar** is a term for a more concise syntax that provides the same functionality for something that already exists. It aims to help make code shorter, therefore, easier to write. 
+
 ### ✨ Pair Programming
 
 ![PairProgramming](https://github.com/Mohammad-Abohasan/Mastering-JavaScript-in-20-Days/assets/74917940/d75adaf1-f01f-4a16-8a8e-dd5c33e709f6)
