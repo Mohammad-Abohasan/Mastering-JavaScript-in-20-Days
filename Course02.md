@@ -219,7 +219,54 @@ const result = copyArrayAndManipulate([1, 2, 3], input => input*2);
 
 ## Closure ⚡
 
- 
+- Closure is the most esoteric of JavaScript concepts.
+- Enables powerful pro-level functions like 'once' and 'memoize'.
+- Many JavaScript design patterns including the module pattern use closure.
+- Build iterators, handle partial application and maintain state in an asynchronous world.
+
+### Functions with memories
+- When our functions get called, we create a live store of data (local memory/variable environment/state) for that function's execution context.
+- When the function finishes executing, its local memory is deleted (except the returned value).
+<br />
+But what if our functions could hold on to live data between executions?
+- This would let our function definitions have an associated cache/persistent memory.
+- But it all starts with us **returning a function from another function**.
+
+
+### Nested Function Scope
+
+```javascript
+function outer (){
+  let counter = 0;
+  function incrementCounter (){
+    counter++;
+  }
+  incrementCounter();
+}
+outer();
+```
+
+ ![CallingAFunctionInTheSameFunctionCall](https://github.com/Mohammad-Abohasan/Mastering-JavaScript-in-20-Days/assets/74917940/3977d499-235b-4d60-9430-ac9c36cbec83)
+
+
+### Retaining Function Memory
+
+```javascript
+function outer (){
+  let counter = 0;
+  function incrementCounter (){
+    counter++;
+  }
+  return incrementCounter;
+}
+
+const myNewFunction = outer();
+myNewFunction();
+myNewFunction();
+```
+
+[**Photo Link**](https://excalidraw.com/#json=UpRVjUxCsVMiIiMq9dJOh,PbjD7jO_L6QH4bFTGz099g)
+![CallingAFunctionOutsideIfTheFunctionCall](https://github.com/Mohammad-Abohasan/Mastering-JavaScript-in-20-Days/assets/74917940/c2e4dfbb-f19c-467f-b755-b2d03e74a21d)
 
 
 ---
