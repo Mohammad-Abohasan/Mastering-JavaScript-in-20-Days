@@ -268,6 +268,9 @@ myNewFunction();
 [**Photo Link**](https://excalidraw.com/#json=UpRVjUxCsVMiIiMq9dJOh,PbjD7jO_L6QH4bFTGz099g)
 ![CallingAFunctionOutsideIfTheFunctionCall](https://github.com/Mohammad-Abohasan/Mastering-JavaScript-in-20-Days/assets/74917940/c2e4dfbb-f19c-467f-b755-b2d03e74a21d)
 
+---
+
+## Asynchronous JavaScript ⚡
 
 ---
 
