@@ -219,6 +219,8 @@ const result = copyArrayAndManipulate([1, 2, 3], input => input*2);
 
 ## Closure ⚡
 
+The closure is **a collection of all the variables in scope at the time of creation of the function**.
+ 
 - Closure is the most esoteric of JavaScript concepts.
 - Enables powerful pro-level functions like 'once' and 'memoize'.
 - Many JavaScript design patterns including the module pattern use closure.
@@ -267,6 +269,82 @@ myNewFunction();
 
 [**Photo Link**](https://excalidraw.com/#json=UpRVjUxCsVMiIiMq9dJOh,PbjD7jO_L6QH4bFTGz099g)
 ![CallingAFunctionOutsideIfTheFunctionCall](https://github.com/Mohammad-Abohasan/Mastering-JavaScript-in-20-Days/assets/74917940/c2e4dfbb-f19c-467f-b755-b2d03e74a21d)
+
+### The bond
+When a function is defined, it gets a bond to the surrounding Local Memory ("Variable Environment") in which it has been defined.
+
+
+### 🫧 The 'backpack'
+
+- We return `incrementCounter`'s code (function definition) out of outer into global and give it a new name - `myNewFunction`
+- We **maintain the bond to outer's live local memory** - it gets 'returned out' attached on the back of incrementCounter's function definition.
+- So outer's local memory is now stored attached to `myNewFunction` - even though outer’s execution context is long gone.
+- When we run `myNewFunction` in global, it will first look in its own local memory first (as we'd expect), but then in `myNewFunction`'s 'backpack';
+
+
+### What can we call this 'backpack'?
+
+- Closed over 'Variable Environment' (C.O.V.E.).
+- Persistent Lexical Scope Referenced Data (P.L.S.R.D.).
+- 'Backpack'.
+- 'Closure'.
+The 'backpack' (or 'closure') of live data is attached `incrementCounter` (then to `myNewFunction`) through a **hidden** property known as [[scope]] which persists when the inner function is returned out.
+
+
+**Let’s run outer again**<br/>
+```javascript
+function outer (){
+  let counter = 0;
+  function incrementCounter (){
+    counter++;
+  }
+  return incrementCounter;
+}
+
+const myNewFunction = outer();
+myNewFunction();
+myNewFunction();
+
+const anotherFunction = outer();
+anotherFunction();
+anotherFunction();
+```
+
+### ✨ Individual 'backpack's
+
+If we run `outer` again and store the returned `incrementCounter` function definition in `anotherFunction`, this new `incrementCounter` function was created in a new execution context and therefore has a brand new independent 'backpack'.
+
+
+```javascript
+let c = 4;
+const addX = x => n => n + x;
+const addThree = addX(3);
+let d = addThree(c);
+console.log('example partial application', d);
+```
+
+is the equivalent to
+
+```javascript
+let c = 4;
+function addX(x) {
+  return function(n) {
+     return n + x;
+  }
+}
+const addThree = addX(3);
+let d = addThree(c);
+console.log('example partial application', d);
+```
+
+This [**article**](https://medium.com/dailyjs/i-never-understood-javascript-closures-9663703368e8) is very important.
+
+### Closure gives our functions persistent memories and entirely new toolkit for writing professional code
+
+**Helper functions**: Everyday professional helper functions like 'once' and 'memoize'.
+**Iterators and generators**: Which use lexical scoping and closure to achieve the most contemporary patterns for handling data in JavaScript.
+**Module pattern**: Preserve state for the life of an application without polluting the global namespace.
+**Asynchronous JavaScript**: Callbacks and Promises rely on closure to persist state in an asynchronous environment.
 
 ---
 
@@ -327,6 +405,8 @@ Write a JavaScript function called sumRange that calculates the sum of all integ
 ```
 
 ### Closure
+
+### Asynchronous JavaScript
 
 ### Promises
 
