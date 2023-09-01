@@ -393,7 +393,21 @@ Implement a JavaScript function called mapAsync that takes an array and a callba
 The final result should be returned as a Promise.
 #### Solution 🥳
 ```javascript
+async function mapAsync (arr, cb){
+  const newArr = [];
+  let tmp;
+  for(let e of arr) {
+    tmp = await cb(e);
+    newArr.push(tmp);
+  }
+  return newArr;
+}
 
+const addTwo = e => e + 2; 
+
+const a = [1, 2, 3];
+const ans = await mapAsync(a, addTwo);
+console.log(ans);
 ```
 
 **Question 2**
@@ -401,10 +415,49 @@ The final result should be returned as a Promise.
 Write a JavaScript function called sumRange that calculates the sum of all integers in a given range. The function should use recursion to handle the calculation and demonstrate understanding of the call stack.
 #### Solution 🥳
 ```javascript
+function sumRange (st, en){
+  return st > en ? 0 : en + sumRange(st, --en);
+}
+
+const ans = sumRange(19, 20);
+console.log(ans);
+```
+[**Photo Link**](https://excalidraw.com/#json=XbQ3lULpLF7J50-ieGSHH,Ts2t2PU3DCehYcFSeShNng)
+![sumRange](https://github.com/Mohammad-Abohasan/Mastering-JavaScript-in-20-Days/assets/74917940/8ab059b0-8a7b-4a0a-b074-e360f1073960)
+
+### Closure
+
+**Question 1**
+<br />
+Write a closure named createCounter that takes an initial value start and returns a function. The returned function, when invoked, should increment the counter by 1 and return the updated value.
+#### Solution 🥳
+```javascript
 
 ```
 
-### Closure
+**Question 2**
+<br />
+Write a closure named calculateAverage that takes an array of numbers, nums, and returns a function. The returned function, when invoked, should calculate and return the average of the numbers in the array.
+#### Solution 🥳
+```javascript
+
+```
+
+**Question 3**
+<br />
+Write a closure named powerOf that takes a base number base and returns a function. The returned function, when invoked with an exponent exp, should calculate and return the result of base raised to the power of exp.
+#### Solution 🥳
+```javascript
+
+```
+
+**Question 4**
+<br />
+Write a closure named compose that takes multiple functions as arguments and returns a new function. The returned function should apply the provided functions in reverse order, passing the result of each function as an argument to the next function.
+#### Solution 🥳
+```javascript
+
+```
 
 ### Asynchronous JavaScript
 
