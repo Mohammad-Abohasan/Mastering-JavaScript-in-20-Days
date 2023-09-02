@@ -350,6 +350,9 @@ This [**article**](https://medium.com/dailyjs/i-never-understood-javascript-clos
 
 ## Asynchronous JavaScript ⚡
 
+
+
+
 ---
 
 ## Promises ⚡
@@ -432,7 +435,15 @@ console.log(ans);
 Write a closure named createCounter that takes an initial value start and returns a function. The returned function, when invoked, should increment the counter by 1 and return the updated value.
 #### Solution 🥳
 ```javascript
+function createCounter (initialValue){
+  const increment = () => ++initialValue;
+  return increment;
+}
 
+const incrementCounter = createCounter(5);
+incrementCounter(); // 6
+incrementCounter(); // 7
+incrementCounter(); // 8
 ```
 
 **Question 2**
