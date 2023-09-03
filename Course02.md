@@ -350,6 +350,9 @@ This [**article**](https://medium.com/dailyjs/i-never-understood-javascript-clos
 
 ## Asynchronous JavaScript ⚡
 
+
+
+
 ---
 
 ## Promises ⚡
@@ -432,23 +435,46 @@ console.log(ans);
 Write a closure named createCounter that takes an initial value start and returns a function. The returned function, when invoked, should increment the counter by 1 and return the updated value.
 #### Solution 🥳
 ```javascript
+function createCounter (initialValue){
+  const increment = () => ++initialValue;
+  return increment;
+}
 
+const incrementCounter = createCounter(5);
+incrementCounter(); // 6
+incrementCounter(); // 7
+incrementCounter(); // 8
 ```
 
 **Question 2**
 <br />
-Write a closure named calculateAverage that takes an array of numbers, nums, and returns a function. The returned function, when invoked, should calculate and return the average of the numbers in the array.
+Write a closure named calculateAverage that takes an array of numbers, and returns a function. The returned function, when invoked, should calculate and return the average of the numbers in the array.
 #### Solution 🥳
 ```javascript
+const calculateAverage = nums => () => nums.reduce((total, element) => total + element) / nums.length;
 
+const calcAvg = calculateAverage([1, 2, 3]);
+calcAvg();
 ```
 
 **Question 3**
 <br />
-Write a closure named powerOf that takes a base number base and returns a function. The returned function, when invoked with an exponent exp, should calculate and return the result of base raised to the power of exp.
+Write a closure named powerOf that takes a base number returns a function. The returned function, when invoked with an exponent exp, should calculate and return the result of base raised to the power of exp.
 #### Solution 🥳
 ```javascript
+const powerOf = n => {
+  return p => {
+    if (p <= 1) {
+      return p ? n : 1;
+    }
+    const ans = fastPow(Math.floor(p / 2));
+    return ans * ans * (p % 2 ? n : 1);
+  };
+}
 
+const power = powerOf(4);
+console.log(power(5)); // 1024
+console.log(power(2)); // 16
 ```
 
 **Question 4**
@@ -456,7 +482,10 @@ Write a closure named powerOf that takes a base number base and returns a functi
 Write a closure named compose that takes multiple functions as arguments and returns a new function. The returned function should apply the provided functions in reverse order, passing the result of each function as an argument to the next function.
 #### Solution 🥳
 ```javascript
+const compose = (...funcs) => arg => funcs.reduceRight((lastRes, func) => func(lastRes), arg);
 
+const applyAllFuncsR = compose(n => n * 2, n => n - 3, n => n / 2, n => n + 5);
+console.log(applyAllFuncsR(5));
 ```
 
 ### Asynchronous JavaScript
