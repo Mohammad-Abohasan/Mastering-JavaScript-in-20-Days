@@ -350,8 +350,69 @@ This [**article**](https://medium.com/dailyjs/i-never-understood-javascript-clos
 
 ## Asynchronous JavaScript ⚡
 
+**Asynchronicity** is the backbone of modern web development in JavaScript yet.
+<br/>
+JavaScript is:
+- Single threaded (one command runs at a time).
+- Synchronously executed (each line is run in order the code appears).
+<br/>
+So what if we have a task:
+- Accessing Twitter’s server to get new tweets that takes a long time.
+- Code we want to run using those tweets.
+Challenge: We want to wait for the tweets to be stored in tweets so that they’re there to run displayTweets on - but no code can run in the meantime.
+
+#### Slow function blocks further code running
+```javascript
+const tweets = getTweets("http://twitter.com/will/1");
+// 350ms wait while a request is sent to Twitter HQ
+
+displayTweets(tweets);
+
+// more code to run
+console.log("I want to runnnn!");
+```
+
+#### What if we try to delay a function directly using setTimeout?
+`setTimeout` is a built in function - its first argument is the function to delay followed by **ms** to delay by.
+
+```javascript
+function printHello(){
+  console.log("Hello");
+}
+
+setTimeout(printHello, 1000);
+console.log("Me first!");
+```
+> In what order will our console logs appear?
+1- Me first!
+2- Hello **(after 100ms = 1s)**
 
 
+#### So what about a delay of 0ms
+
+```javascript
+function printHello(){
+  console.log("Hello");
+}
+
+setTimeout(printHello, 0);
+console.log("Me first!");
+```
+> Now, in what order will our console logs occur?
+1- Me first!
+2- Hello 
+
+
+### JavaScript is not enough - We need new pieces (some of which aren’t JavaScript at all)
+
+Our core JavaScript engine has **3 main parts**:
+- Thread of execution.
+- Memory/variable environment.
+- Call stack.
+We need to add some new components:
+- Web Browser APIs/Node background APIs.
+- Promises.
+- Event loop, Callback/Task queue and micro task queue.
 
 ---
 
