@@ -351,11 +351,11 @@ This [**article**](https://medium.com/dailyjs/i-never-understood-javascript-clos
 ## Asynchronous JavaScript ⚡
 
 **Asynchronicity** is the backbone of modern web development in JavaScript yet.
-<br/>
+
 JavaScript is:
 - Single threaded (one command runs at a time).
 - Synchronously executed (each line is run in order the code appears).
-<br/>
+
 So what if we have a task:
 - Accessing Twitter’s server to get new tweets that takes a long time.
 - Code we want to run using those tweets.
@@ -384,11 +384,13 @@ setTimeout(printHello, 1000);
 console.log("Me first!");
 ```
 > In what order will our console logs appear?
+
 1- Me first!
+<br/>
 2- Hello **(after 100ms = 1s)**
 
 
-#### So what about a delay of 0ms
+#### So what about a delay of 0ms?
 
 ```javascript
 function printHello(){
@@ -399,7 +401,9 @@ setTimeout(printHello, 0);
 console.log("Me first!");
 ```
 > Now, in what order will our console logs occur?
+
 1- Me first!
+<br/>
 2- Hello 
 
 
@@ -409,6 +413,7 @@ Our core JavaScript engine has **3 main parts**:
 - Thread of execution.
 - Memory/variable environment.
 - Call stack.
+
 We need to add some new components:
 - Web Browser APIs/Node background APIs.
 - Promises.
