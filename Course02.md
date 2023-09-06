@@ -350,6 +350,8 @@ This [**article**](https://medium.com/dailyjs/i-never-understood-javascript-clos
 
 ## Asynchronous JavaScript ⚡
 
+[**Tasks, microtasks, queues and schedules** - article](https://jakearchibald.com/2015/tasks-microtasks-queues-and-schedules/#level-1-bossfight)
+
 **Asynchronicity** is the backbone of modern web development in JavaScript yet.
 
 JavaScript is:
@@ -416,8 +418,12 @@ Our core JavaScript engine has **3 main parts**:
 
 We need to add some new components:
 - Web Browser APIs/Node background APIs.
+  <br/>
+  ![Web Browser](https://github.com/Mohammad-Abohasan/Mastering-JavaScript-in-20-Days/assets/74917940/980e23f3-0be5-4fc0-a0d1-598df003a275)
 - Promises.
 - Event loop, Callback/Task queue and micro task queue.
+
+
 
 ---
 
