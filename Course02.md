@@ -374,41 +374,6 @@ displayTweets(tweets);
 console.log("I want to runnnn!");
 ```
 
-#### What if we try to delay a function directly using setTimeout?
-`setTimeout` is a built in function - its first argument is the function to delay followed by **ms** to delay by.
-
-```javascript
-function printHello(){
-  console.log("Hello");
-}
-
-setTimeout(printHello, 1000);
-console.log("Me first!");
-```
-> In what order will our console logs appear?
-
-1- Me first!
-<br/>
-2- Hello **(after 100ms = 1s)**
-
-
-#### So what about a delay of 0ms?
-
-```javascript
-function printHello(){
-  console.log("Hello");
-}
-
-setTimeout(printHello, 0);
-console.log("Me first!");
-```
-> Now, in what order will our console logs occur?
-
-1- Me first!
-<br/>
-2- Hello 
-
-
 ### JavaScript is not enough - We need new pieces (some of which aren’t JavaScript at all)
 
 Our core JavaScript engine has **3 main parts**:
@@ -419,11 +384,79 @@ Our core JavaScript engine has **3 main parts**:
 We need to add some new components:
 - Web Browser APIs/Node background APIs.
   <br/>
-  ![Web Browser](https://github.com/Mohammad-Abohasan/Mastering-JavaScript-in-20-Days/assets/74917940/980e23f3-0be5-4fc0-a0d1-598df003a275)
+  ![WebBrowser](https://github.com/Mohammad-Abohasan/Mastering-JavaScript-in-20-Days/assets/74917940/ad03346a-be02-4f8c-92a3-e4bb6790f983)
 - Promises.
 - Event loop, Callback/Task queue and micro task queue.
 
+### ES5 solution: Introducing ‘callback functions’, and Web Browser APIs
+#### What if we try to delay a function directly using setTimeout?
+`setTimeout` is a built in function - its first argument is the function to delay followed by **ms** to delay by.
 
+```javascript
+function printHello(){
+  console.log("Hello");
+}
+
+setTimeout(printHello, 1000);
+
+console.log("Me first!");
+```
+##### In what order will our console logs appear?
+1- Me first!
+<br/>
+2- Hello **(after 100ms = 1s)**
+
+![Timer](https://github.com/Mohammad-Abohasan/Mastering-JavaScript-in-20-Days/assets/74917940/2631dfb9-48d1-454c-9475-3537fe329aff)
+
+
+#### So what about a delay of 0ms?
+
+```javascript
+function printHello(){
+  console.log("Hello");
+}
+
+setTimeout(printHello, 0);
+
+console.log("Me first!");
+```
+##### Now, in what order will our console logs occur?
+
+1- Me first!
+<br/>
+2- Hello 
+
+### We’re interacting with a world outside of JavaScript now - so we need rules
+```javascript
+function printHello(){
+  console.log("Hello");
+}
+
+function blockFor1Sec(){
+  //blocks in the JavaScript thread for 1 sec
+}
+
+setTimeout(printHello, 0);
+
+blockFor1Sec();
+console.log("Me first!");
+```
+1- Me first!
+<br/>
+2- Hello 
+
+![CallbackQueueAndEventLoop](https://github.com/Mohammad-Abohasan/Mastering-JavaScript-in-20-Days/assets/74917940/db1c4283-1068-4379-a56d-d982bed1a3ab)
+
+
+
+### ES5 Web Browser APIs with callback functions
+
+**Problems**
+- Our response data is only available in the callback function - **Callback hell**.
+- Maybe it feels a little odd to think of passing a function into another function only for it to run much later.
+
+**Benefits**
+- Super explicit once you understand how it works under-the-hood.
 
 ---
 
