@@ -599,11 +599,11 @@ console.log(applyAllFuncsR(5));
 <br />
 You are given a function `executeInSequenceWithCBs` and some code. The task is to
 modify the `executeInSequenceWithCBs` function so that it runs and executes all
-the tasks inside the asyncTasks array. 
-<br/ >
+the tasks inside the asyncTasks array.
+<br />
 The function should return an array of messages obtained from each task's
-execution. 
-<br/ >
+execution.
+<br />
 You are only allowed to change the `executeInSequenceWithCBs` function or add new
 functions/code. You cannot modify the tasks' functions.
 
@@ -639,7 +639,17 @@ const executeInSequenceWithCBs = (tasks, callback) => {}
 ```
 #### Solution 🥳
 ```javascript
+const executeInSequenceWithCBs = (tasks, callback) => {
+  tasks.forEach(task => task(callback));
+  return messages;
+};
 
+const messages = [];
+const getMessage = msg => messages.push(msg);
+
+const output = executeInSequenceWithCBs(asyncTasks, getMessage);
+console.log(output);
+// [ "Task 2 has executed successfully!", "Task 3 has executed successfully!", "Task 4 has executed successfully!", "Task 1 has executed successfully!", "Task 5 has executed successfully!" ]
 ```
 
 **Question 2**
@@ -655,7 +665,7 @@ The output of the `executeInParallelWithPromises` function should be an array
 containing the results of each API's execution. 
 <br />
 Each result should be an object with three keys: `apiName`, `apiUrl`, and
-`apiData`..
+`apiData`.
 
 ```javascript
 const apis = [
@@ -681,7 +691,22 @@ const executeInParallelWithPromises = (apis) => {}
 ```
 #### Solution 🥳
 ```javascript
+const executeInParallelWithPromises = (apis) => {
+  const data = [];
+  apis.forEach(async api => {
+    const response = await fetch(api.apiUrl);
+    data.push({
+      apiName: api.apiName,
+      apiUrl: api.apiUrl,
+      apiData: await response.json()
+    });
+  });
+  return data;
+};
 
+const output = executeInParallelWithPromises(apis);
+console.log(output);
+// [ { apiName: "products", apiUrl: "https://dummyjson.com/products", apiData: {…} }, { apiName: "comments", apiUrl: "https://dummyjson.com/comments", apiData: {…} }, { apiName: "users", apiUrl: "https://dummyjson.com/users", apiData: {…} }, { apiName: "posts", apiUrl: "https://dummyjson.com/posts", apiData: {…} } ]
 ```
 
 **Question 3**
@@ -726,7 +751,7 @@ const executeInSequenceWithPromises = (apis) => {}
 ```
 #### Solution 🥳
 ```javascript
-
+// later
 ```
 
 ### Promises
