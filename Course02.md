@@ -462,6 +462,91 @@ console.log("Me first!");
 
 ## Promises ⚡
 
+### ES6+ Solution (Promises)
+Using two-pronged 'facade' functions that both:
+- Initiate background web browser work.
+- Return a placeholder object (promise) immediately in JavaScript.
+
+```javascript
+function display(data){
+  console.log(data);
+}
+
+const futureData = fetch('https://dummyjson.com/posts/1');
+
+futureData.then(display);
+console.log("Me first!");
+/*
+Me first!
+Response { type: "cors", url: "https://dummyjson.com/posts/1", redirected: false, status: 200, ok: true, statusText: "OK", headers: Headers(2), body: ReadableStream, bodyUsed: false }
+*/
+```
+
+### ES6+ Solution (Promises)
+Special objects built into JavaScript that get returned immediately when we make a call to a web browser API/feature (e.g. fetch) that’s set up to return promises(not all are).
+<br />
+Promises act as a placeholder for the data we expect to get back from the web browser feature’s background work.
+
+### `then()` method and functionality to call on completion
+Any code we want to run on the returned data must also be saved on the promise object.
+<br />
+Added using .then method to the hidden property 'onFulfilment'.
+<br />
+Promise objects will automatically trigger the attached function to run (with its input being the returned data).
+
+
+```javascript
+function display(data) {
+  console.log(data);
+}
+function printHello() {
+  console.log("Hello");
+}
+function blockFor300ms() {
+  // blocks js thread for 300ms
+}
+
+setTimeout(printHello, 0);
+
+const futureData = fetch('https://dummyjson.com/posts/1');
+
+futureData.then(display);
+blockFor300ms();
+console.log("Me first!");
+/*
+Hello
+Me first!
+Response { type: "cors", url: "https://dummyjson.com/posts/1", redirected: false, status: 200, ok: true, statusText: "OK", headers: Headers(2), body: ReadableStream, bodyUsed: false }
+*/
+```
+
+
+### Promises
+
+**Problems**
+- 99% of developers have no idea how they’re working under the hood.
+- Debugging becomes super-hard as a result.
+- Developers fail technical interviews.
+
+**Benefits**
+- Cleaner readable style with pseudo-synchronous style code.
+- Nice error handling process.
+
+
+### We have rules for the execution of our asynchronously delayed code
+Hold promise-deferred functions in a microtask queue and callback function in a task queue (Callback queue) when the Web Browser Feature (API) finishes.
+<br />
+Add the function to the Call stack (i.e. run the function) when:
+- Call stack is empty & all global code run (Have the Event Loop check this condition).
+
+Prioritize functions in the microtask queue over the Callback queue.
+
+
+### Promises, Web APIs, the Callback & Microtask Queues and Event loop enable:
+- **Non-blocking applications**: This means we don’t have to wait in the single thread and don't block further code from running.
+- **However long it takes**: We cannot predict when our Browser feature’s work will finish so we let JS handle automatically running the function on its completion.
+- **Web applications**: Asynchronous JavaScript is the backbone of the modern web - letting us build fast 'non-blocking' applications.
+
 ---
 
 ## Classes & Prototypes ⚡
