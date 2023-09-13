@@ -1,8 +1,6 @@
 JavaScript: The Hard Parts, v2
 ==============================
 
-### 📋 Exercise
-
 ## Introduction ⚡
 
 What to focus on in the workshop?
@@ -519,7 +517,6 @@ Me first!
 Response { type: "cors", url: "https://dummyjson.com/posts/1", redirected: false, status: 200, ok: true, statusText: "OK", headers: Headers(2), body: ReadableStream, bodyUsed: false }
 */
 ```
-
 
 ### Promises
 
