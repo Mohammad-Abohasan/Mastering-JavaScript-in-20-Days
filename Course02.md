@@ -675,7 +675,7 @@ const applyAllFuncsR = compose(n => n * 2, n => n - 3, n => n / 2, n => n + 5);
 console.log(applyAllFuncsR(5));
 ```
 
-### Asynchronous JavaScript
+### Asynchronous JavaScript & Promises
 
 **Question 1**
 <br />
@@ -835,7 +835,5 @@ const executeInSequenceWithPromises = (apis) => {}
 ```javascript
 // later
 ```
-
-### Promises
 
 ### Classes & Prototypes
