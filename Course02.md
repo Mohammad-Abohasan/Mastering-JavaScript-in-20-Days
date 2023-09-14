@@ -479,6 +479,8 @@ Me first!
 Response { type: "cors", url: "https://dummyjson.com/posts/1", redirected: false, status: 200, ok: true, statusText: "OK", headers: Headers(2), body: ReadableStream, bodyUsed: false }
 */
 ```
+![fetch(networkRequest)](https://github.com/Mohammad-Abohasan/Mastering-JavaScript-in-20-Days/assets/74917940/77e3896c-dc83-45a2-8deb-386ebada6957)
+
 
 ### ES6+ Solution (Promises)
 Special objects built into JavaScript that get returned immediately when we make a call to a web browser API/feature (e.g. fetch) that’s set up to return promises(not all are).
@@ -488,9 +490,9 @@ Promises act as a placeholder for the data we expect to get back from the web br
 ### `then()` method and functionality to call on completion
 Any code we want to run on the returned data must also be saved on the promise object.
 <br />
-Added using .then method to the hidden property 'onFulfilment'.
+Added using `.then` method to the hidden property `onFulfilment` array.
 <br />
-Promise objects will automatically trigger the attached function to run (with its input being the returned data).
+Promise objects will **automatically** trigger the attached function to run (with its input being the returned data).
 
 
 ```javascript
