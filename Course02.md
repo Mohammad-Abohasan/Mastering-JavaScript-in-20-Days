@@ -839,3 +839,5 @@ const executeInSequenceWithPromises = (apis) => {}
 ```
 
 ### Classes & Prototypes
+[26 exercises of the Object Oriented Programming section.](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/)
+[freeCodeCamp - Mohammad-Abohasan](https://www.freecodecamp.org/Mohammad-Abohasan)
