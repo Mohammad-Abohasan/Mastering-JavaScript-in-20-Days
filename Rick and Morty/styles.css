@@ -1,0 +1,16 @@
+* {
+  padding: 0px;
+  margin: 0px;
+}
+
+body {
+  background-color: gainsboro;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.title {
+  color:black;
+  font-size: 48px;
+  text-align: center;
+  margin: 40px;
+}
